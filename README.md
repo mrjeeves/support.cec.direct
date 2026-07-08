@@ -21,7 +21,6 @@ configured in the repo's Pages settings.
 - `index.html` — the whole site.
 - `ds/cec/` — the shared CEC design system (tokens + self-hosted fonts); copied
   in so the site matches allmystuff.works. Don't edit the tokens here.
-- `install.ps1` — a short-URL stub that fetches and runs the canonical Windows
-  installer from the app repo (kept for `irm | iex` power users; the site itself
-  doesn't advertise it).
-- `favicon.*`, `apple-touch-icon.png`, `assets/` — brand marks.
+- `favicon.*`, `apple-touch-icon.png`, `assets/cec-logo.png` — the CEC brand
+  marks (the cyan-bracket "critical error" logo), used in the nav, the hero
+  prompt card, and the tab/home-screen icons.
