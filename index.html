@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEC Support — remote help, the moment you need it</title>
+<meta name="description" content="CEC Support is a tiny Windows app that lets a Critical Error Computing technician fix your computer over a private, encrypted connection — only when you allow it, and revocable at any time.">
+<meta name="theme-color" content="#070711">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" sizes="48x48 32x32 16x16" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CEC Support — remote help, the moment you need it">
+<meta property="og:description" content="Run the app, read out your number, approve the technician. Screen and control over an encrypted peer-to-peer link — revocable any time. By Critical Error Computing.">
+<meta property="og:url" content="https://support.cec.direct/">
+<meta property="og:image" content="https://support.cec.direct/og.png">
+<link rel="stylesheet" href="ds/cec/styles.css">
+<style>
+  body { margin: 0; background: oklch(0.135 0.022 285); }
+  .card { background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+  .step-n { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--accent); flex-shrink: 0; }
+  .safe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px; }
+  h1, h2, h3 { text-wrap: pretty; }
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: clip;">
+
+  <!-- ════════ NAV ════════ -->
+  <nav style="position: sticky; top: 0; z-index: 50; background: oklch(0.135 0.022 285 / 0.74); backdrop-filter: blur(14px) saturate(1.2); border-bottom: 1px solid var(--border);">
+    <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 18px;">
+      <a href="./" style="display: flex; align-items: center; gap: 11px;">
+        <svg viewBox="0 0 256 256" aria-hidden="true" style="width: 30px; height: 30px; color: var(--accent);">
+          <g stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round">
+            <path d="M128 74 L77 165 M128 74 L181 160 M77 165 L181 160"></path>
+          </g>
+          <circle cx="128" cy="72" r="27" fill="currentColor"></circle>
+          <circle cx="76" cy="166" r="22" fill="currentColor"></circle>
+          <circle cx="182" cy="160" r="22" fill="currentColor"></circle>
+        </svg>
+        <span style="font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: 0.01em;">CEC <span style="color: var(--dim); font-weight: 500;">Support</span></span>
+      </a>
+      <div style="display: flex; gap: 22px; align-items: center;">
+        <a href="#how" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim);">How it works</a>
+        <a href="#safe" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim);">Is it safe?</a>
+        <a href="faq/" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim);">FAQ</a>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <a class="btn btn-primary btn-sm" href="download/">Get CEC Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════ HERO ════════ -->
+  <header style="position: relative; padding: clamp(56px, 7vw, 104px) 0 clamp(44px, 5vw, 72px); overflow: hidden;">
+    <div class="grid-bg"></div>
+    <div class="glow" style="width: 480px; height: 420px; right: -8%; top: -20%; background: var(--accent); opacity: 0.10;"></div>
+    <div class="wrap" style="position: relative; z-index: 2; max-width: min(920px, 92vw);">
+      <span class="eyebrow no-rule">Remote support by Critical Error Computing · Windows</span>
+      <h1 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(42px, 6vw, 84px); line-height: 1.01; letter-spacing: -0.01em; margin: 20px 0 18px;">Remote help, the moment you need it.</h1>
+      <p class="lede" style="max-width: 60ch;">Run one small app, read us your number, and a CEC technician can see and fix your screen — over a private, encrypted, direct connection. You approve every session, and you can cut us off with one click.</p>
+      <div style="display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; align-items: center;">
+        <a class="btn btn-primary rep-cue" href="download/">Download for Windows</a>
+        <a class="btn btn-ghost" href="#how">How it works <span aria-hidden="true">→</span></a>
+      </div>
+      <p style="font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-top: 18px; line-height: 1.7;">No account · nothing exposed to the internet · free to run · macOS &amp; Linux too</p>
+    </div>
+  </header>
+
+  <!-- ════════ HOW IT WORKS ════════ -->
+  <section id="how" class="section" style="padding-top: 8px;">
+    <div class="wrap" style="max-width: min(900px, 92vw);">
+      <span class="eyebrow">How it works</span>
+      <h2 class="display-m" style="margin: 14px 0 8px;">Four steps. You're always in control.</h2>
+      <p class="lede" style="max-width: 60ch; margin-bottom: 26px;">It works like AnyDesk, minus the account and the middle-man server. Nobody can reach your machine without the number you read them, and nothing happens on your screen until you say yes.</p>
+      <div style="display: grid; gap: 0; border-top: 1px solid var(--border);">
+        <div style="display: flex; gap: 16px; padding: 18px 4px; border-bottom: 1px solid var(--border); align-items: baseline;">
+          <span class="step-n">01</span>
+          <p style="margin: 0; font-size: 15.5px; color: var(--dim); line-height: 1.65;"><strong style="color: var(--text);">Open CEC Support.</strong> It shows you a short <strong style="color: var(--text);">Support number</strong> — that's it. Nothing connects; you're simply reachable to whoever you give the number to.</p>
+        </div>
+        <div style="display: flex; gap: 16px; padding: 18px 4px; border-bottom: 1px solid var(--border); align-items: baseline;">
+          <span class="step-n">02</span>
+          <p style="margin: 0; font-size: 15.5px; color: var(--dim); line-height: 1.65;"><strong style="color: var(--text);">Read us the number.</strong> On the phone or in chat, tell your CEC technician your number. Only someone with it can even find your computer — the number is your private, one-off doorway.</p>
+        </div>
+        <div style="display: flex; gap: 16px; padding: 18px 4px; border-bottom: 1px solid var(--border); align-items: baseline;">
+          <span class="step-n">03</span>
+          <p style="margin: 0; font-size: 15.5px; color: var(--dim); line-height: 1.65;"><strong style="color: var(--text);">We ask to connect.</strong> A box pops up: <em style="color: var(--text); font-style: normal;">“&lt;your technician&gt; is trying to connect to your computer,”</em> with a short code you can confirm with us out loud.</p>
+        </div>
+        <div style="display: flex; gap: 16px; padding: 18px 4px; border-bottom: 1px solid var(--border); align-items: baseline;">
+          <span class="step-n">04</span>
+          <p style="margin: 0; font-size: 15.5px; color: var(--dim); line-height: 1.65;"><strong style="color: var(--text);">You choose how long.</strong> <strong style="color: var(--text);">Approve Once</strong>, <strong style="color: var(--text);">Auto-Approve for 3 hours</strong>, or <strong style="color: var(--text);">Auto-Approve Forever</strong> — then we can see and control your screen to fix it. Change your mind any time: <strong style="color: var(--text);">revoke</strong> and we're gone instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ WHY IT'S SAFE ════════ -->
+  <section id="safe" class="section" style="background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="wrap">
+      <span class="eyebrow">Is it safe?</span>
+      <h2 class="display-m" style="margin: 14px 0 8px;">Built so you never have to just trust us.</h2>
+      <p class="lede" style="max-width: 62ch; margin-bottom: 28px;">CEC Support rides the same private mesh technology as our AllMyStuff app. There is no server in the middle holding your screen or your files — the connection is straight from your machine to your technician's, end-to-end encrypted.</p>
+      <div class="safe-grid">
+        <div class="card">
+          <h3 style="font-family: var(--font-display); font-size: 19px; font-weight: 600; margin: 0 0 8px;">Per-session or general</h3>
+          <p style="margin: 0; font-size: 14.5px; color: var(--dim); line-height: 1.6;">Approve just this session, a 3-hour window for a repair, or standing access — your call, every time.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family: var(--font-display); font-size: 19px; font-weight: 600; margin: 0 0 8px;">Revocable instantly</h3>
+          <p style="margin: 0; font-size: 14.5px; color: var(--dim); line-height: 1.6;">“Forget this technician” cuts the connection on the next frame — no waiting, no calling us to ask.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family: var(--font-display); font-size: 19px; font-weight: 600; margin: 0 0 8px;">Encrypted &amp; direct</h3>
+          <p style="margin: 0; font-size: 14.5px; color: var(--dim); line-height: 1.6;">End-to-end encrypted, peer-to-peer. No cloud relay stores your session; nobody in the middle can watch.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family: var(--font-display); font-size: 19px; font-weight: 600; margin: 0 0 8px;">Nothing exposed</h3>
+          <p style="margin: 0; font-size: 14.5px; color: var(--dim); line-height: 1.6;">No open ports, no public address. Without your number, your machine is simply invisible.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family: var(--font-display); font-size: 19px; font-weight: 600; margin: 0 0 8px;">Tiny footprint</h3>
+          <p style="margin: 0; font-size: 14.5px; color: var(--dim); line-height: 1.6;">One small app. Close it and you're off the mesh — unless you asked us to stay for an unattended repair.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family: var(--font-display); font-size: 19px; font-weight: 600; margin: 0 0 8px;">Open source</h3>
+          <p style="margin: 0; font-size: 14.5px; color: var(--dim); line-height: 1.6;">The whole thing is on <a href="https://github.com/mrjeeves/CECSupport" style="color: var(--accent);">GitHub</a>, MIT-licensed. Read it, or have someone you trust read it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ UNATTENDED ════════ -->
+  <section class="section">
+    <div class="wrap" style="max-width: min(880px, 92vw);">
+      <span class="eyebrow">For longer repairs</span>
+      <h2 class="display-m" style="margin: 14px 0 12px;">Unattended, only if you want it.</h2>
+      <p style="font-size: 15.5px; color: var(--dim); line-height: 1.7; max-width: 64ch;">Some fixes need a reboot — or three. If you pick <strong style="color: var(--text);">Auto-Approve for 3 hours</strong> or <strong style="color: var(--text);">Forever</strong>, you can also let CEC Support <strong style="color: var(--text);">install itself as a background service</strong>, so we can reconnect after a restart and keep going without you sitting there. It's the same “unattended access” an app like AnyDesk offers — except it's your choice, it's time-boxed unless you said Forever, and one click on your end ends it. On a machine that already runs AllMyStuff, CEC Support quietly reuses it rather than installing anything extra.</p>
+    </div>
+  </section>
+
+  <!-- ════════ DOWNLOAD CTA ════════ -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div style="position: relative; overflow: hidden; background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--accent-line); border-radius: 16px; padding: clamp(32px, 5vw, 56px); text-align: center;">
+        <div class="glow" style="width: 420px; height: 300px; left: 50%; top: -30%; transform: translateX(-50%); background: var(--accent); opacity: 0.12;"></div>
+        <div style="position: relative;">
+          <h2 class="display-m" style="margin: 0 0 12px;">Need a hand right now?</h2>
+          <p class="lede" style="max-width: 52ch; margin: 0 auto 24px;">Download CEC Support, open it, and read us your number. That's the whole setup.</p>
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a class="btn btn-primary rep-cue" href="download/">Download for Windows</a>
+            <a class="btn btn-ghost" href="download/">macOS &amp; Linux · other options <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer style="border-top: 1px solid var(--border); padding: clamp(40px, 5vw, 64px) 0 32px; position: relative; overflow: hidden;">
+    <div class="glow" style="width: 460px; height: 320px; left: -12%; bottom: -40%; background: var(--violet); opacity: 0.1;"></div>
+    <div class="wrap" style="position: relative;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 36px; margin-bottom: 40px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 11px; margin-bottom: 14px;">
+            <svg viewBox="0 0 256 256" aria-hidden="true" style="width: 26px; height: 26px; color: var(--accent);">
+              <g stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round">
+                <path d="M128 74 L77 165 M128 74 L181 160 M77 165 L181 160"></path>
+              </g>
+              <circle cx="128" cy="72" r="27" fill="currentColor"></circle>
+              <circle cx="76" cy="166" r="22" fill="currentColor"></circle>
+              <circle cx="182" cy="160" r="22" fill="currentColor"></circle>
+            </svg>
+            <span style="font-family: var(--font-display); font-weight: 700; font-size: 18px;">CEC <span style="color: var(--dim); font-weight: 500;">Support</span></span>
+          </div>
+          <p style="font-size: 14px; color: var(--faint); max-width: 32ch; line-height: 1.6;">Remote help you allow, and can revoke, at any time.</p>
+        </div>
+        <div>
+          <h4 style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px;">CEC Support</h4>
+          <ul style="list-style: none; display: grid; gap: 9px; font-size: 14px; color: var(--dim);">
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#safe">Is it safe?</a></li>
+            <li><a href="faq/">FAQ</a></li>
+            <li><a href="download/">Download</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px;">More from CEC</h4>
+          <ul style="list-style: none; display: grid; gap: 9px; font-size: 14px; color: var(--dim);">
+            <li><a href="https://allmystuff.works">AllMyStuff — your own devices</a></li>
+            <li><a href="https://criticalerrorcomputing.com">criticalerrorcomputing.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px;">Open</h4>
+          <ul style="list-style: none; display: grid; gap: 9px; font-size: 14px; color: var(--dim);">
+            <li><a href="https://github.com/mrjeeves/CECSupport">github.com/mrjeeves/CECSupport</a></li>
+            <li><a href="https://github.com/mrjeeves/CECSupport/releases">All releases</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid var(--border);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="assets/cec-logo.png" alt="Critical Error Computing" style="height: 26px; width: auto;">
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);">A Critical Error Computing product · Humble, TX</span>
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);">© 2026 support.cec.direct · MIT</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

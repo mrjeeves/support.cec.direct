@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download — CEC Support</title>
+<meta name="description" content="Get CEC Support for Windows (and macOS / Linux). One-line install or a direct download with checksums. Free to run, no account.">
+<meta name="theme-color" content="#070711">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" sizes="48x48 32x32 16x16" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Download CEC Support">
+<meta property="og:description" content="Remote help you allow and can revoke. Windows first; macOS and Linux too. By Critical Error Computing.">
+<meta property="og:url" content="https://support.cec.direct/download/">
+<meta property="og:image" content="https://support.cec.direct/og.png">
+<link rel="stylesheet" href="../ds/cec/styles.css">
+<style>
+  body { margin: 0; background: oklch(0.135 0.022 285); }
+  .dl-card { background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--border); border-radius: 8px; padding: 26px 24px; display: flex; flex-direction: column; gap: 16px; }
+  .dl-card h3 { font-family: var(--font-display); font-size: 24px; font-weight: 600; margin: 0; }
+  .dl-list { display: grid; gap: 8px; }
+  .dl-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font-size: 14px; color: var(--dim); }
+  .dl-row a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+  .dl-row .meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+  .cmd { background: oklch(0.115 0.018 285); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .cmd .head { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+  .cmd .body { padding: 15px 16px; font-family: var(--font-mono); font-size: 13px; color: var(--text); overflow-x: auto; white-space: nowrap; }
+  .cmd .body .p { color: var(--faint); }
+  .note { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); line-height: 1.7; }
+  #oneliner { margin-top: 30px; max-width: 980px; }
+  #for-you:not([hidden]) + #oneliner { margin-top: 16px; }
+  .term-tab { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); padding: 11px 13px 9px; }
+  .term-tab:hover { color: var(--dim); }
+  .term-tab[aria-selected="true"] { color: var(--text); border-bottom-color: var(--accent); }
+  .snippet { display: none; position: relative; }
+  .snippet.active { display: block; }
+  .snippet .body { padding-right: 96px; }
+  .copy-btn { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); appearance: none; background: var(--surface); border: 1px solid var(--border); border-radius: 3px; cursor: pointer; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); padding: 5px 11px; transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease; }
+  .copy-btn:hover { color: var(--text); border-color: var(--border-bright); }
+  .copy-btn.copied { color: var(--ok); border-color: var(--ok); }
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: clip;">
+
+  <!-- ════════ NAV ════════ -->
+  <nav style="position: sticky; top: 0; z-index: 50; background: oklch(0.135 0.022 285 / 0.74); backdrop-filter: blur(14px) saturate(1.2); border-bottom: 1px solid var(--border);">
+    <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 18px;">
+      <a href="../" style="display: flex; align-items: center; gap: 11px;">
+        <svg viewBox="0 0 256 256" aria-hidden="true" style="width: 30px; height: 30px; color: var(--accent);">
+          <g stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round">
+            <path d="M128 74 L77 165 M128 74 L181 160 M77 165 L181 160"></path>
+          </g>
+          <circle cx="128" cy="72" r="27" fill="currentColor"></circle>
+          <circle cx="76" cy="166" r="22" fill="currentColor"></circle>
+          <circle cx="182" cy="160" r="22" fill="currentColor"></circle>
+        </svg>
+        <span style="font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: 0.01em;">CEC <span style="color: var(--dim); font-weight: 500;">Support</span></span>
+      </a>
+      <div style="display: flex; gap: 22px; align-items: center;">
+        <a href="../#how" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim);">How it works</a>
+        <a href="../#safe" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim);">Is it safe?</a>
+        <a href="../faq/" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim);">FAQ</a>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <a class="chip" href="https://github.com/mrjeeves/CECSupport" title="CEC Support on GitHub"><span class="dot"></span><span id="rel-version">latest release</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════ HERO ════════ -->
+  <header style="position: relative; padding: clamp(48px, 6vw, 84px) 0 clamp(36px, 4vw, 56px); overflow: hidden;">
+    <div class="grid-bg"></div>
+    <div class="glow" style="width: 460px; height: 400px; right: -8%; top: -22%; background: var(--accent); opacity: 0.10;"></div>
+    <div class="wrap" style="position: relative; z-index: 2;">
+      <span class="eyebrow no-rule">Download · free to run · no account</span>
+      <h1 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 5.4vw, 76px); line-height: 1.02; letter-spacing: -0.01em; margin: 20px 0 18px;">Get CEC Support.</h1>
+      <p class="lede" style="max-width: 62ch;">Windows first — macOS and Linux below. Install it, open it, and read us your number. What the installer does is <a href="#script" style="color: var(--accent);">spelled out further down</a>.</p>
+
+      <div id="for-you" hidden style="margin-top: 30px; max-width: 980px;">
+        <div style="background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--accent-line); border-radius: 8px; padding: 20px 24px; box-shadow: 0 14px 40px -12px oklch(0.64 0.255 350 / 0.2); display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
+          <svg viewBox="0 0 256 256" aria-hidden="true" style="width: 46px; height: 46px; flex-shrink: 0; filter: drop-shadow(0 8px 18px oklch(0.64 0.255 350 / 0.35));">
+            <rect x="8" y="8" width="240" height="240" rx="56" fill="var(--accent)"></rect>
+            <g stroke="#ffffff" stroke-width="13" fill="none" stroke-linecap="round" opacity="0.9">
+              <path d="M128 74 L77 165 M128 74 L181 160 M77 165 L181 160"></path>
+            </g>
+            <circle cx="128" cy="72" r="27" fill="#ffffff"></circle>
+            <circle cx="76" cy="166" r="22" fill="#ffffff"></circle>
+            <circle cx="182" cy="160" r="22" fill="#ffffff"></circle>
+          </svg>
+          <div style="min-width: 0; flex: 1;">
+            <div style="font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px;">for this machine · best guess, everything else is below</div>
+            <div id="fy-name" style="font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.1;"></div>
+            <div id="fy-meta" style="font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-top: 7px;"></div>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+            <a class="btn btn-primary" id="fy-btn" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="oneliner" class="cmd">
+        <div class="head" style="padding: 0 14px 0 0; flex-wrap: wrap;">
+          <div role="tablist" aria-label="Pick your install method" style="display: flex;">
+            <button type="button" class="term-tab" data-os="windows" role="tab" aria-selected="true">Windows</button>
+            <button type="button" class="term-tab" data-os="unix" role="tab" aria-selected="false">macOS / Linux</button>
+            <button type="button" class="term-tab" data-os="source" role="tab" aria-selected="false">From source</button>
+          </div>
+          <span>picked for this machine</span>
+        </div>
+        <div class="snippet active" data-os="windows" role="tabpanel" aria-label="Windows install command">
+          <div class="body"><span class="p">PS&gt;</span> irm https://support.cec.direct/install.ps1 | iex</div>
+          <button type="button" class="copy-btn" data-copy="irm https://support.cec.direct/install.ps1 | iex" aria-label="Copy install command">copy</button>
+        </div>
+        <div class="snippet" data-os="unix" role="tabpanel" aria-label="macOS / Linux install command">
+          <div class="body"><span class="p">$</span> curl -fsSL https://support.cec.direct/install.sh | sh</div>
+          <button type="button" class="copy-btn" data-copy="curl -fsSL https://support.cec.direct/install.sh | sh" aria-label="Copy install command">copy</button>
+        </div>
+        <div class="snippet" data-os="source" role="tabpanel" aria-label="Build from source">
+          <div class="body"><span class="p">$</span> git clone https://github.com/mrjeeves/CECSupport<br><span class="p">$</span> cd CECSupport/gui<br><span class="p">$</span> pnpm install &amp;&amp; pnpm tauri build</div>
+          <button type="button" class="copy-btn" data-copy="git clone https://github.com/mrjeeves/CECSupport&#10;cd CECSupport/gui&#10;pnpm install &amp;&amp; pnpm tauri build" aria-label="Copy build commands">copy</button>
+        </div>
+      </div>
+      <p class="note" style="margin-top: 14px;">Running a command someone gave you deserves suspicion — <a href="#script" style="color: var(--accent);">here's exactly what it does</a>, and <a href="https://github.com/mrjeeves/CECSupport/blob/main/scripts/install.ps1" style="color: var(--accent);">its source, in the app repo</a>. To let us reconnect after reboots during a repair, add <code style="font-family: var(--font-mono); font-size: 12px;">-Service</code>.</p>
+    </div>
+  </header>
+
+  <!-- ════════ PLATFORMS ════════ -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 20px; align-items: stretch;">
+
+        <!-- Windows -->
+        <div class="dl-card" style="border-color: var(--accent-line); box-shadow: 0 14px 40px -12px oklch(0.64 0.255 350 / 0.2);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+            <h3>Windows</h3>
+            <span class="chip" style="padding: 4px 9px; font-size: 10px;"><span class="dot"></span>Recommended</span>
+          </div>
+          <div class="dl-list">
+            <div class="dl-row"><span>Installer <span class="meta">· setup.exe</span></span><a data-asset-end="-setup.exe" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download</a></div>
+            <div class="dl-row"><span>.msi <span class="meta">· for deployment</span></span><a data-asset-end=".msi" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download</a></div>
+            <div class="dl-row"><span>Portable <span class="meta">· zip</span></span><a data-asset-end="cec-support-windows-x86_64.zip" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download</a></div>
+          </div>
+          <p class="note" style="margin: 0;">10 / 11 · x64. Or just run the PowerShell one-liner above — it fetches the right build.</p>
+        </div>
+
+        <!-- macOS -->
+        <div class="dl-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+            <h3>macOS</h3>
+            <span class="note">11+</span>
+          </div>
+          <div class="dl-list">
+            <div class="dl-row"><span>.dmg <span class="meta">· Apple silicon</span></span><a data-asset-end="_aarch64.dmg" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download</a></div>
+            <div class="dl-row"><span>.dmg <span class="meta">· Intel</span></span><a data-asset-end="_x64.dmg" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download</a></div>
+          </div>
+          <p class="note" style="margin: 0;">First launch is right-click → Open until the build is notarized.</p>
+        </div>
+
+        <!-- Linux -->
+        <div class="dl-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+            <h3>Linux</h3>
+            <span class="note">x86_64 / arm64</span>
+          </div>
+          <div class="dl-list">
+            <div class="dl-row"><span>AppImage <span class="meta">· x86_64</span></span><a data-asset-end="_amd64.AppImage" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download</a></div>
+            <div class="dl-row"><span>.deb <span class="meta">· amd64</span></span><a data-asset-end="_amd64.deb" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download</a></div>
+          </div>
+          <p class="note" style="margin: 0;">Or the <code style="font-family: var(--font-mono); font-size: 12px;">curl … | sh</code> one-liner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ WHAT THE SCRIPT DOES ════════ -->
+  <section id="script" class="section" style="background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: clamp(28px, 4vw, 56px);">
+      <div>
+        <span class="eyebrow">No surprises</span>
+        <h2 class="display-m" style="margin: 14px 0 14px;">What the installer actually does.</h2>
+        <ol style="display: grid; gap: 10px; font-size: 15px; color: var(--dim); line-height: 1.6; padding-left: 20px; margin: 0;">
+          <li>Runs the <a href="https://github.com/mrjeeves/CECSupport/blob/main/scripts/install.ps1" style="color: var(--accent);">canonical installer maintained in the app repo</a> — <code style="font-family: var(--font-mono); font-size: 13px;">support.cec.direct/install.ps1</code> is just the short URL for it, so the site can't drift from what the app ships.</li>
+          <li>Installs <strong style="color: var(--text);">the CEC Support app</strong> for your machine from the <a href="https://github.com/mrjeeves/CECSupport/releases/latest" style="color: var(--accent);">latest GitHub release</a>, verifying every SHA-256 sidecar.</li>
+          <li><strong style="color: var(--text);">Reuses, doesn't clobber.</strong> If you already run our AllMyStuff app, CEC Support quietly reuses its mesh components instead of installing duplicates. If you don't, it brings its own — you never need to have heard of AllMyStuff.</li>
+          <li>Adds <code style="font-family: var(--font-mono); font-size: 13px;">-Service</code> (Windows) or <code style="font-family: var(--font-mono); font-size: 13px;">--service</code> (macOS/Linux) to install the background service for an unattended repair. Leave it off and CEC Support only runs while it's open.</li>
+        </ol>
+        <p style="font-size: 15px; color: var(--dim); line-height: 1.6; margin: 16px 0 0;">No telemetry, no account. Close the app and you're off the mesh.</p>
+      </div>
+      <div>
+        <span class="eyebrow">Verify anything</span>
+        <h2 class="display-m" style="margin: 14px 0 14px;">Checksums ship with every asset.</h2>
+        <p style="font-size: 15px; color: var(--dim); line-height: 1.6; margin-bottom: 16px;">Every archive has a <code style="font-family: var(--font-mono); font-size: 13px;">.sha256</code> sidecar in the release. On Windows:</p>
+        <div class="cmd" style="margin-bottom: 10px;">
+          <div class="head"><span>verify a download</span><span>powershell</span></div>
+          <div class="snippet active">
+            <div class="body"><span class="p">PS&gt;</span> Get-FileHash .\cec-support-windows-x86_64.zip -Algorithm SHA256</div>
+            <button type="button" class="copy-btn" data-copy="Get-FileHash .\cec-support-windows-x86_64.zip -Algorithm SHA256" aria-label="Copy verify command">copy</button>
+          </div>
+        </div>
+        <p class="note">macOS / Linux: <code style="font-family: var(--font-mono); font-size: 12px;">shasum -a 256 -c</code> or <code style="font-family: var(--font-mono); font-size: 12px;">sha256sum -c</code>. Compare against the <code style="font-family: var(--font-mono); font-size: 12px;">.sha256</code> in the release. The source is <a href="https://github.com/mrjeeves/CECSupport" style="color: var(--accent);">on GitHub</a>, MIT.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ AFTER ════════ -->
+  <section id="after" class="section">
+    <div class="wrap" style="max-width: min(880px, 92vw);">
+      <span class="eyebrow">After you install</span>
+      <h2 class="display-m" style="margin: 14px 0 18px;">Then it's just three things.</h2>
+      <div style="display: grid; gap: 0; border-top: 1px solid var(--border);">
+        <div style="display: flex; gap: 16px; padding: 16px 4px; border-bottom: 1px solid var(--border); align-items: baseline;">
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent); flex-shrink: 0;">01</span>
+          <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;"><strong style="color: var(--text);">Open it and read us your number.</strong> The app shows a short Support number. Tell it to your technician.</p>
+        </div>
+        <div style="display: flex; gap: 16px; padding: 16px 4px; border-bottom: 1px solid var(--border); align-items: baseline;">
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent); flex-shrink: 0;">02</span>
+          <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;"><strong style="color: var(--text);">Approve the connection.</strong> When the “trying to connect” box appears, confirm the name and code, then pick Approve Once / 3 hours / Forever.</p>
+        </div>
+        <div style="display: flex; gap: 16px; padding: 16px 4px; border-bottom: 1px solid var(--border); align-items: baseline;">
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent); flex-shrink: 0;">03</span>
+          <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;"><strong style="color: var(--text);">Revoke when you're done.</strong> Hit “Forget this technician” any time to end access instantly.</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap;">
+        <a class="btn btn-ghost" href="../#how">How it works <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="../faq/">Read the FAQ <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer style="border-top: 1px solid var(--border); padding: clamp(40px, 5vw, 64px) 0 32px; position: relative; overflow: hidden;">
+    <div class="glow" style="width: 460px; height: 320px; left: -12%; bottom: -40%; background: var(--violet); opacity: 0.1;"></div>
+    <div class="wrap" style="position: relative;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 4px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="../assets/cec-logo.png" alt="Critical Error Computing" style="height: 26px; width: auto;">
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);">A Critical Error Computing product · Humble, TX</span>
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);">© 2026 support.cec.direct · MIT</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  // "For this machine" — a best guess from the user agent, never load-bearing.
+  var box = document.getElementById("for-you");
+  if (!box) return;
+  var ua = navigator.userAgent || "";
+  if (/Android|iPhone|iPad|iPod|Mobile|CrOS/i.test(ua)) return;
+  if (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1) return; // iPad in a trenchcoat
+  var pick = null;
+  if (/Windows/i.test(ua)) {
+    pick = { name: "Windows", meta: "installer · setup.exe · windows 10 / 11 · x64", btn: "Download for Windows", end: "-setup.exe" };
+  } else if (/Macintosh|Mac OS X/i.test(ua)) {
+    pick = { name: "macOS", meta: ".dmg · apple silicon · macos 11+", btn: "Download for macOS", end: "_aarch64.dmg" };
+  } else if (/Linux|X11/i.test(ua)) {
+    pick = { name: "Linux", meta: "appimage · x86_64 — or the one-liner grabs the right build", btn: "Download for Linux", end: "_amd64.AppImage" };
+  }
+  if (!pick) return;
+  document.getElementById("fy-name").textContent = pick.name;
+  document.getElementById("fy-meta").textContent = pick.meta;
+  var btn = document.getElementById("fy-btn");
+  btn.textContent = pick.btn;
+  btn.setAttribute("data-asset-end", pick.end);
+  box.hidden = false;
+})();
+
+(function () {
+  "use strict";
+  // Install tabs + copy buttons. Tabs carry data-os; the default is this
+  // machine's platform (Windows-first product, so Windows wins on Windows).
+  function wireInstallTabs() {
+    var tabs = document.querySelectorAll(".term-tab");
+    var snips = document.querySelectorAll(".snippet[data-os]");
+    if (!tabs.length) return;
+    function activate(os) {
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", t.dataset.os === os ? "true" : "false"); });
+      snips.forEach(function (s) { s.classList.toggle("active", s.dataset.os === os); });
+    }
+    tabs.forEach(function (t) { t.addEventListener("click", function () { activate(t.dataset.os); }); });
+    var ua = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || "";
+    activate(/win/i.test(ua) ? "windows" : (/mac|linux|x11/i.test(ua) ? "unix" : "windows"));
+  }
+  function wireCopyButtons() {
+    function fallback(text) {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.cssText = "position:fixed;top:-9999px";
+      document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+      ta.remove(); return ok;
+    }
+    document.querySelectorAll(".copy-btn").forEach(function (btn) {
+      btn.dataset.label = btn.textContent;
+      btn.addEventListener("click", function () {
+        var text = btn.dataset.copy || ""; if (!text) return;
+        var finish = function (ok) {
+          btn.textContent = ok ? "copied" : "press ⌘C";
+          btn.classList.add("copied");
+          clearTimeout(btn._copyTimer);
+          btn._copyTimer = setTimeout(function () { btn.textContent = btn.dataset.label; btn.classList.remove("copied"); }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () { finish(true); }, function () { finish(fallback(text)); });
+        } else { finish(fallback(text)); }
+      });
+    });
+  }
+  wireInstallTabs();
+  wireCopyButtons();
+})();
+
+(function () {
+  "use strict";
+  // Progressive enhancement: resolve versioned asset links from the latest
+  // release. If the API is unreachable, every link already points at releases.
+  fetch("https://api.github.com/repos/mrjeeves/CECSupport/releases/latest")
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (rel) {
+      var v = document.getElementById("rel-version");
+      if (v && rel.tag_name) v.textContent = rel.tag_name + " · latest";
+      document.querySelectorAll("a[data-asset-end]").forEach(function (a) {
+        var end = a.getAttribute("data-asset-end");
+        var hit = (rel.assets || []).find(function (x) { return x.name.endsWith(end); });
+        if (hit) a.href = hit.browser_download_url;
+      });
+    })
+    .catch(function () { /* static fallbacks stand */ });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/* ============================================================
+   Critical Error Computing — Design System
+   Global stylesheet entry point. Consumers link THIS file.
+   Import order: fonts → tokens → base element styles.
+   ============================================================ */
+
+@import "tokens/fonts.css";
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/base.css";

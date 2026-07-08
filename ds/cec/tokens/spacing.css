@@ -1,0 +1,62 @@
+/* ============================================================
+   CEC — Spacing, radii, borders, shadows, motion
+   The CEC surface language: SHARP. Small radii (2px buttons,
+   4–8px cards). Hairline borders that brighten on hover.
+   Deep ambient drop-shadows + accent glows, never soft pillows.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 22px;
+  --space-6: 28px;
+  --space-7: 40px;
+  --space-8: 56px;
+  --space-9: 80px;
+  --space-section: clamp(72px, 10vw, 140px);  /* vertical section rhythm */
+
+  /* ---- Content widths ---- */
+  --wrap:        min(1240px, 92vw);   /* @kind spacing */
+  --wrap-narrow: min(960px, 92vw);    /* @kind spacing */
+
+  /* ---- Radii (deliberately tight — this is hardware, not a SaaS pill) ---- */
+  --r-xs:  2px;   /* buttons, chips, tags, flags */
+  --r-sm:  4px;   /* small cards, inputs, icon tiles */
+  --r-md:  6px;   /* panels, tables, consoles */
+  --r-lg:  8px;   /* hero cards, product cards, modals */
+  --r-xl:  16px;  /* hardware/device bodies */
+  --r-round: 999px;
+
+  /* ---- Borders ---- */
+  --bd:        1px solid var(--border);
+  --bd-bright: 1px solid var(--border-bright);
+  --bd-accent: 1px solid var(--accent-line);
+
+  /* ---- Shadows: ambient depth ---- */
+  --shadow-card: 0 30px 70px -40px oklch(0 0 0 / 0.9);
+  --shadow-panel: 0 40px 90px -40px #000;
+  --shadow-pop:  0 26px 54px -18px #000;
+  --shadow-inset-hi: 0 1px 0 oklch(0.45 0.01 285 / 0.6) inset;
+
+  /* ---- Accent glow shadows (hover/featured/CTA) ---- */
+  --glow-accent: 0 14px 40px -12px var(--accent);
+  --glow-violet: 0 0 24px color-mix(in oklch, var(--violet) 42%, transparent);
+  --ring-accent: 0 0 0 1px var(--accent-line);
+
+  /* ---- Texture ---- */
+  --grid-cell: 64px;       /* @kind spacing */
+  --grid-opacity: 0.5;     /* @kind other */
+  --glow-opacity: 1;       /* @kind other */
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(.2, .8, .2, 1);   /* @kind other */
+  --ease-in-out: ease-in-out;   /* @kind other */
+  --dur-fast: .15s;   /* @kind other */
+  --dur-base: .25s;   /* @kind other */
+  --dur-slow: .4s;    /* @kind other */
+  --lift: translateY(-2px);   /* @kind other */
+  --lift-card: translateY(-3px);   /* @kind other */
+}
