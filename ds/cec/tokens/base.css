@@ -1,0 +1,163 @@
+/* ============================================================
+   CEC — Base element styles + brand atoms
+   Resets, body defaults, and the reusable utility/atom classes
+   used across the site (eyebrow, btn, chip, display scale, grid-bg).
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---- Headings ---- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  text-wrap: balance;
+}
+
+/* ---- Display scale ---- */
+.display-xl { font-family: var(--font-display); font-size: var(--display-xl); font-weight: var(--fw-bold); line-height: var(--lh-display); letter-spacing: var(--ls-display); text-wrap: pretty; }
+.display-l  { font-family: var(--font-display); font-size: var(--display-l);  font-weight: var(--fw-semibold); line-height: var(--lh-display); letter-spacing: var(--ls-display); }
+.display-m  { font-family: var(--font-display); font-size: var(--display-m);  font-weight: var(--fw-semibold); line-height: var(--lh-display); }
+.display-s  { font-family: var(--font-display); font-size: var(--display-s);  font-weight: var(--fw-semibold); line-height: var(--lh-snug); }
+
+.lede {
+  font-size: var(--text-lede);
+  color: var(--dim);
+  line-height: 1.55;
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+.mono { font-family: var(--font-mono); }
+
+/* ---- Eyebrow (mono kicker with accent rule) ---- */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--mono-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px; height: 1px;
+  background: var(--accent-line);
+}
+.eyebrow.no-rule::before { display: none; }
+
+.kicker-tag {
+  font-family: var(--font-mono);
+  font-size: var(--mono-label);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* ---- Layout helpers ---- */
+.wrap { width: var(--wrap); margin: 0 auto; }
+.wrap-narrow { width: var(--wrap-narrow); margin: 0 auto; }
+.section { padding: var(--space-section) 0; position: relative; }
+
+/* ---- Background texture layers (brand motif) ---- */
+.grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, oklch(0.5 0.05 285 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.5 0.05 285 / 0.05) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+  opacity: var(--grid-opacity);
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black, transparent 80%);
+}
+.glow {
+  position: absolute; border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: var(--glow-opacity);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  padding: 15px 28px;
+  border-radius: var(--r-xs);
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform var(--dur-fast) ease, box-shadow var(--dur-base) ease, background var(--dur-base) ease, border-color var(--dur-base) ease;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { transform: var(--lift); box-shadow: var(--glow-accent), 0 0 0 1px var(--accent-line); }
+.btn-ghost { background: transparent; color: var(--text); border-color: var(--border-bright); }
+.btn-ghost:hover { border-color: var(--text); transform: var(--lift); }
+.btn-sm { padding: 11px 18px; font-size: 14px; }
+.btn-ic { display: inline-flex; align-items: center; }
+.btn-ic svg { width: 18px; height: 18px; }
+
+/* "Talk to a human" pulse — subtle site-wide cue on rep buttons */
+.rep-cue { animation: repCue 3s ease-in-out infinite; }
+.rep-cue:hover { animation: none; }
+@keyframes repCue {
+  0%, 100% { box-shadow: 0 0 6px -3px var(--accent); }
+  50%      { box-shadow: 0 0 12px 1px var(--accent-soft), 0 0 24px -3px var(--accent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rep-cue { animation: none; box-shadow: 0 0 10px 0 var(--accent-soft), 0 0 16px -4px var(--accent); }
+}
+
+/* ---- Chip (mono status pill) ---- */
+.chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: var(--bd);
+  border-radius: var(--r-xs);
+  color: var(--dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 10px var(--ok); }
+
+/* ---- Form field focus ---- */
+.cec-field:focus { outline: none; border-color: var(--accent) !important; }
+.cec-field::placeholder { color: var(--faint); }
+
+/* ---- Glitch word (brand wink) ---- */
+.gw { position: relative; display: inline; }
+.gw.glitching {
+  display: inline-block;
+  animation: gword .26s steps(2, jump-none) 1;
+}
+@keyframes gword {
+  0%   { text-shadow: -2px 0 var(--glitch-cyan), 2px 0 var(--accent); transform: translateX(1px); }
+  25%  { text-shadow: 2px 0 var(--glitch-cyan), -2px 0 var(--accent); transform: translateX(-1px) skewX(-4deg); }
+  50%  { text-shadow: -1px 0 var(--glitch-cyan), 1px 0 var(--accent); transform: translateX(0); clip-path: inset(12% 0 31% 0); }
+  75%  { text-shadow: 1px 0 var(--glitch-cyan), -1px 0 var(--accent); clip-path: none; }
+  100% { text-shadow: none; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .gw.glitching { animation: none; } }
