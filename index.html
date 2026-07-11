@@ -46,6 +46,19 @@
   .mini-btn { font-family: var(--font-body); font-weight: 600; font-size: 12px; color: var(--text); border: 1px solid var(--border-bright); border-radius: 5px; padding: 6px 14px; }
   .mini-hint { font-size: 11px; color: var(--faint); }
 
+  /* CEC's contact points on the waiting beat — call, or catch the live. */
+  .mock-contact { text-align: left; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 10px 14px; margin: 0 0 14px; display: flex; flex-direction: column; gap: 7px; }
+  .mc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .mc-k { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); white-space: nowrap; }
+  .mc-v { font-size: 13px; font-weight: 600; color: var(--text); }
+  .mc-live { font-size: 11.5px; color: var(--accent); text-decoration: underline; overflow-wrap: anywhere; text-align: right; }
+
+  /* The identity bar under every scene — the app keeps this pair on screen
+     the whole time, so the mock does too. */
+  .mock-idbar { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .mock-id-name { font-size: 11.5px; font-weight: 600; color: var(--dim); }
+  .mock-id-num { font-family: var(--font-mono); font-size: 10.5px; color: var(--faint); }
+
   .pulse-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--accent); margin: 0 auto 14px; animation: breathe 1.6s ease-in-out infinite; }
   @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.35); opacity: 0.55; } }
   @media (prefers-reduced-motion: reduce) { .mock-scene { transition: none; } .pulse-dot { animation: none; } }
@@ -89,7 +102,7 @@
 
         <!-- the product moment, played out: press Ask for help, wait a beat in
              line, approve your technician. Slow crossfades on a loop. -->
-        <div class="mock" role="img" aria-label="The app, animated: you press Ask for help, wait in line a moment, then Alex asks to connect — nothing is shared until you approve them by name, once or for 3 hours, and you can say no.">
+        <div class="mock" role="img" aria-label="The app, animated: you press Ask for help, wait in line — with CEC's phone number 713.309.6361 and TikTok shown while you wait — then Alex asks to connect; nothing is shared until you approve them by name, and your computer's name and Support Number stay at the bottom of the window the whole time.">
           <div class="mock-badge">
             <img src="assets/cec-logo.png" alt="" aria-hidden="true" style="height: 20px; width: auto; display: block;">
             CEC Support
@@ -109,6 +122,10 @@
               <span class="pulse-dot"></span>
               <div class="mock-title" style="margin-top: 0;">Help is on the way</div>
               <p class="mock-sub" style="margin-bottom: 14px;">You're in line — a CEC technician will connect shortly.</p>
+              <div class="mock-contact">
+                <div class="mc-row"><span class="mc-k">Call us</span><span class="mc-v">713.309.6361</span></div>
+                <div class="mc-row"><span class="mc-k">Catch us live</span><a class="mc-live" href="https://www.tiktok.com/@criticalerrorcomputing">tiktok.com/@criticalerrorcomputing</a></div>
+              </div>
               <div class="mock-deny" style="margin-top: 0;">Stop asking</div>
             </div>
             <div class="mock-scene on" data-scene="approve">
@@ -121,6 +138,12 @@
               </div>
               <div class="mock-deny">No thanks — don't connect</div>
             </div>
+          </div>
+          <!-- The identity bar rides every scene, like the app's: the pair we
+               match on stays on screen the whole time. -->
+          <div class="mock-idbar">
+            <span class="mock-id-name">Kitchen PC (KITCHEN-01)</span>
+            <span class="mock-id-num">CEC Support 418 552 903</span>
           </div>
         </div>
       </div>
@@ -201,12 +224,15 @@
     function show(name) {
       scenes.forEach(function (s) { s.classList.toggle("on", s.dataset.scene === name); });
     }
+    // Lazy, and lazier where it matters: the front door gets a long look,
+    // and the waiting beat holds longest of the first two — it now carries
+    // the phone number and the live link, which deserve reading time.
     function loop() {
       show("ask");
-      setTimeout(function () { askBtn.classList.add("pressed"); }, 3400);
-      setTimeout(function () { askBtn.classList.remove("pressed"); show("wait"); }, 4000);
-      setTimeout(function () { show("approve"); }, 7800);
-      setTimeout(loop, 16000);
+      setTimeout(function () { askBtn.classList.add("pressed"); }, 5600);
+      setTimeout(function () { askBtn.classList.remove("pressed"); show("wait"); }, 6200);
+      setTimeout(function () { show("approve"); }, 14200);
+      setTimeout(loop, 22500);
     }
     loop();
   })();
