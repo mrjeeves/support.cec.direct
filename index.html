@@ -40,6 +40,12 @@
   /* Incoming starts only after outgoing has fully cleared — a lazy dip
      through dark, never text over text. */
   .mock-scene.on { opacity: 1; transition-delay: 650ms; transition-duration: 900ms; }
+  /* The demoted fallback, mirroring the app: a slim ghost pill and a whisper
+     under a divider — clearly subordinate to the Ask button. */
+  .mock-minor { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .mini-btn { font-family: var(--font-body); font-weight: 600; font-size: 12px; color: var(--text); border: 1px solid var(--border-bright); border-radius: 5px; padding: 6px 14px; }
+  .mini-hint { font-size: 11px; color: var(--faint); }
+
   .pulse-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--accent); margin: 0 auto 14px; animation: breathe 1.6s ease-in-out infinite; }
   @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.35); opacity: 0.55; } }
   @media (prefers-reduced-motion: reduce) { .mock-scene { transition: none; } .pulse-dot { animation: none; } }
@@ -93,7 +99,10 @@
               <div class="mock-title">How can we help?</div>
               <div class="mock-actions" style="margin-top: 12px;">
                 <div class="mock-btn primary" id="mock-ask-btn">Ask for help <span class="hint">Raise your hand — a technician sees your request and connects</span></div>
-                <div class="mock-btn ghost">Show Support Number <span class="hint">Already on the phone with us? Read it out</span></div>
+              </div>
+              <div class="mock-minor">
+                <span class="mini-btn">Show Support Number</span>
+                <span class="mini-hint">If we ask for your number — or you'd like to confirm it</span>
               </div>
             </div>
             <div class="mock-scene" data-scene="wait" style="text-align: center;">
@@ -138,7 +147,7 @@
           <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;">Watch everything as it happens. One tap ends it, whenever you like.</p>
         </div>
       </div>
-      <p class="cap" style="margin: 36px 0 0; text-align: center;">Already on the phone with us? The classic way still works — press <span style="color: var(--dim);">Show Support Number</span> and read it out.</p>
+      <p class="cap" style="margin: 36px 0 0; text-align: center;">If we ask for your Support Number — or you'd like to confirm it — it's one tap behind <span style="color: var(--dim);">Show Support Number</span>.</p>
     </div>
   </section>
 
