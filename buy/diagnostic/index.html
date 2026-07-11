@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secure checkout — CEC Support</title>
+<meta name="description" content="Completing your CEC Diagnostic Session purchase on our secure checkout.">
+<!-- A hand-off page, not a destination: nothing to index. -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070711">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="icon" sizes="48x48 32x32 16x16" href="../../favicon.ico">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="stylesheet" href="../../ds/cec/styles.css">
+<style>
+  body { margin: 0; background: oklch(0.135 0.022 285); }
+  .stage { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: var(--bg); color: var(--text); font-family: var(--font-body); }
+  .hand { width: min(430px, 100%); background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--border-bright); border-radius: 16px; padding: 30px 28px; box-shadow: 0 30px 80px -30px oklch(0.64 0.255 350 / 0.45); text-align: center; }
+  .badge { display: flex; align-items: center; justify-content: center; gap: 9px; color: var(--accent); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .order { display: flex; align-items: center; justify-content: space-between; gap: 14px; text-align: left; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin: 22px 0 6px; }
+  .order .what { font-family: var(--font-display); font-size: 18px; font-weight: 600; line-height: 1.25; }
+  .order .who { display: block; font-family: var(--font-mono); font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-top: 4px; }
+  .order .price { font-family: var(--font-mono); font-size: 20px; font-weight: 600; white-space: nowrap; }
+  .pulse-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--accent); margin: 18px auto 12px; animation: breathe 1.6s ease-in-out infinite; }
+  @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.35); opacity: 0.55; } }
+  @media (prefers-reduced-motion: reduce) { .pulse-dot { animation: none; } }
+  .status { margin: 0 0 18px; font-size: 15px; color: var(--dim); }
+  .go { width: 100%; }
+  .fine { margin: 18px 0 0; font-size: 12.5px; color: var(--faint); line-height: 1.55; }
+  .fine strong { color: var(--dim); font-weight: 600; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="hand">
+    <div class="badge">
+      <img src="../../assets/cec-logo.png" alt="" aria-hidden="true" style="height: 20px; width: auto; display: block;">
+      CEC Support
+    </div>
+
+    <div class="order">
+      <div>
+        <div class="what">Diagnostic Session</div>
+        <span class="who" id="who" hidden>Requested by your technician</span>
+      </div>
+      <div class="price">$50</div>
+    </div>
+
+    <div id="going">
+      <div class="pulse-dot" aria-hidden="true"></div>
+      <p class="status" role="status">Taking you to our secure checkout…</p>
+      <a class="btn btn-primary go" id="go-btn" href="#">Continue to secure checkout →</a>
+      <p class="fine">
+        Payments are processed by our store on a <strong>secure checkout</strong> —
+        CEC never sees your card details. Your receipt arrives by email.
+      </p>
+    </div>
+
+    <div id="not-live" class="hidden">
+      <p class="status" style="margin-top: 18px;">
+        This purchase link isn't live quite yet.
+      </p>
+      <p class="fine">
+        No problem — <strong>your technician is still on the line</strong> and can
+        take care of the diagnostic session with you by phone.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ————— Store configuration (the ONE place the app never has to know) —————
+  //
+  // The CEC Support app sends every diagnostic purchase to this page, so the
+  // store details live here — not in a shipped installer. To go live (or move
+  // stores, or re-create the product) fill these two in and publish:
+  //
+  //   STORE      the store's checkout origin, e.g. "https://your-store.myshopify.com"
+  //              (or the custom domain the store answers checkout on)
+  //   VARIANT_ID the "CEC Diagnostic Session" variant id — in Shopify admin,
+  //              open the product's variant and copy the number from the URL
+  //
+  // While either is empty the page shows a calm "not live yet" note instead of
+  // a broken redirect, and the technician finishes by phone.
+  var STORE = "";
+  var VARIANT_ID = "";
+
+  (function () {
+    // The app appends attribution only — never a destination. Everything here
+    // is whitelisted, trimmed, and re-encoded; no query parameter can change
+    // WHERE this page sends someone (that would be an open redirect wearing
+    // our name), only what the store order is labelled with.
+    function param(name, cap) {
+      var v = new URLSearchParams(location.search).get(name) || "";
+      // Control characters out, length capped; the rest is re-encoded by
+      // URLSearchParams below so it can only ever be an attribute VALUE.
+      v = v.replace(/[\u0000-\u001f\u007f]/g, "").trim().slice(0, cap || 64);
+      return v;
+    }
+
+    var sn = param("sn", 16).replace(/\D/g, "");        // support number: digits only
+    var ref = param("ref", 64).replace(/[^-\w]/g, "");  // purchase reference
+    var agent = param("agent", 64);                     // technician's display name
+
+    var who = document.getElementById("who");
+    if (agent && who) {
+      who.textContent = "Requested by " + agent;
+      who.hidden = false;
+    }
+
+    if (!STORE || !VARIANT_ID) {
+      document.getElementById("going").classList.add("hidden");
+      document.getElementById("not-live").classList.remove("hidden");
+      return;
+    }
+
+    // A Shopify cart permalink goes straight to the hosted checkout with the
+    // item in the cart. The attributes ride along onto the order itself, so
+    // the technician verifying it in admin sees exactly whose session it is.
+    var q = new URLSearchParams();
+    if (sn) q.set("attributes[Support Number]", sn);
+    if (agent) q.set("attributes[Technician]", agent);
+    if (ref) q.set("attributes[Reference]", ref);
+    var qs = q.toString();
+    var checkout =
+      STORE.replace(/\/+$/, "") + "/cart/" + encodeURIComponent(VARIANT_ID) + ":1" + (qs ? "?" + qs : "");
+
+    document.getElementById("go-btn").href = checkout;
+    // A beat of brand continuity, then the hand-off. The button stays for
+    // anyone whose browser held the navigation back.
+    setTimeout(function () { location.replace(checkout); }, 1100);
+  })();
+</script>
+</body>
+</html>
