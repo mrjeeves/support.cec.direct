@@ -17,9 +17,11 @@ It's deliberately minimal, in two beats:
   (the hardware "help me" that raises the machine's hand in the same CEC
   Support queue, on lifetime or monthly support), then the lineup in CEC's
   signature product card — **Cube** and **PCIe** at **$149.99**, **Pro** and
-  **PCIe-Pro** at **$299.99** — and one link out to
-  [allmystuff.works/hardware](https://allmystuff.works/hardware/) for full
-  specs.
+  **PCIe-Pro** at **$299.99**. Every card is a **Buy** link to its product
+  page on the store
+  ([criticalerrorcomputing.com/collections/cec-access](https://www.criticalerrorcomputing.com/collections/cec-access);
+  the PCIe cards share the `cec-access-internal` product), and the section
+  closes with one "Shop them all" link to that collection.
 
 ## Deploy
 
