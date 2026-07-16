@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CEC Support — we fix it, you stay in control</title>
-<meta name="description" content="Download CEC Support for Windows. Press Ask for help, approve your technician by name, and we fix your computer — you can stop us any time.">
+<meta name="description" content="Free remote help for Windows: press Ask for help and a real technician connects. Plus CEC KVMs — a hardware help button that brings CEC support to any machine, even headless ones, on lifetime support.">
 <meta name="theme-color" content="#070711">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" sizes="48x48 32x32 16x16" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CEC Support — remote help for Windows">
-<meta property="og:description" content="Download it, press Ask for help, approve your technician. We fix your computer; you stay in control.">
+<meta property="og:description" content="Press Ask for help and a real technician connects — you approve them by name. Plus CEC KVMs: a hardware help button that brings CEC support to any machine.">
 <meta property="og:url" content="https://support.cec.direct/">
 <meta property="og:image" content="https://support.cec.direct/og.png">
 <link rel="stylesheet" href="ds/cec/styles.css">
@@ -70,6 +70,55 @@
   .assure { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; color: var(--dim); }
   .assure svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
   @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr !important; } .mock { margin: 0 auto; } }
+
+  /* ============================================================
+     KVMs — the hardware. A lead-in hero (text + device, echoing
+     the app hero up top), then the lineup in CEC's signature
+     FleetCard, then a tight support + link close. Kept direct.
+     ============================================================ */
+  .kvm-sec { border-top: 1px solid var(--border); overflow: hidden; }
+
+  /* Lead-in: copy on the left, the Pro's screen + USR-button panel on
+     the right — the same shape as the page's opening hero. */
+  .kvm-hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(30px, 5.5vw, 68px); align-items: center; }
+  .kvm-hero h2 { margin: 16px 0; }
+  .kvm-hero .lede { max-width: 46ch; margin-bottom: 24px; }
+  .kvm-hero-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .kvm-hero-shot { position: relative; display: grid; place-items: center; }
+  .kvm-hero-shot img { position: relative; z-index: 1; width: min(420px, 100%); height: auto; filter: drop-shadow(0 34px 58px rgb(0 0 0 / 0.6)); }
+
+  /* The lineup: CEC's signature FleetCard (the same allmystuff.works uses):
+     photo on a faint accent-lit stage, class label, name, price, a line,
+     spec chips, a link. Hover lifts and tints to the product accent (--pa). */
+  .kvm-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: clamp(48px, 7vw, 82px) auto 0; }
+  @media (max-width: 1040px) { .kvm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 660px; } }
+  @media (max-width: 540px) { .kvm-grid { grid-template-columns: 1fr; max-width: 420px; } }
+
+  .fleet { --pa: var(--accent); display: flex; flex-direction: column; position: relative; color: inherit; background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base) ease, box-shadow var(--dur-base) ease; }
+  .fleet:hover { transform: translateY(-5px); border-color: color-mix(in oklch, var(--pa) 58%, transparent); box-shadow: 0 30px 70px -40px var(--pa); }
+  .fleet.featured { border-color: color-mix(in oklch, var(--pa) 58%, transparent); }
+  .fleet-flag { position: absolute; top: 14px; right: 14px; z-index: 3; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: var(--pa); padding: 4px 10px; border-radius: var(--r-xs); }
+  .fleet-shot { position: relative; height: 194px; display: grid; place-items: center; padding: 18px; border-bottom: 1px solid var(--border); background: radial-gradient(ellipse 70% 70% at 50% 45%, color-mix(in oklch, var(--pa) 16%, transparent), transparent 70%); }
+  .fleet-shot img { position: relative; max-width: 88%; max-height: 168px; width: auto; object-fit: contain; z-index: 1; filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5)); }
+  .fleet-body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+  .fleet-no { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pa); margin-bottom: 8px; }
+  .fleet-name { font-family: var(--font-display); font-weight: 600; font-size: 30px; line-height: 1; margin-bottom: 10px; }
+  .fleet-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px; }
+  .fleet-price b { font-family: var(--font-display); font-size: 34px; font-weight: 700; line-height: 1; }
+  .fleet-price small { font-family: var(--font-mono); font-size: 12px; color: var(--faint); }
+  .fleet-role { color: var(--dim); font-size: 14px; line-height: 1.55; margin-bottom: 18px; }
+  .fleet-role strong { color: var(--text); font-weight: 600; }
+  .fleet-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
+  .fleet-chips span { font-family: var(--font-mono); font-size: 11px; color: var(--dim); border: 1px solid var(--border); border-radius: var(--r-xs); padding: 4px 9px; }
+  .fleet-link { margin-top: auto; font-family: var(--font-body); font-weight: 600; font-size: 15px; color: var(--pa); display: inline-flex; align-items: center; gap: 8px; transition: gap var(--dur-base) ease; }
+  .fleet:hover .fleet-link { gap: 12px; }
+
+  /* One terse fact line + the link out, in the page's own caption style. */
+  .kvm-foot { margin-top: clamp(30px, 4.5vw, 52px); display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+  .kvm-foot .cap { line-height: 1.7; }
+  .kvm-foot .cap b { color: var(--accent); font-weight: 600; }
+
+  @media (max-width: 860px) { .kvm-hero { grid-template-columns: 1fr; gap: 26px; text-align: center; } .kvm-hero .eyebrow { justify-content: center; } .kvm-hero .lede { margin-left: auto; margin-right: auto; } .kvm-hero-tags { justify-content: center; } }
 </style>
 </head>
 <body>
@@ -82,7 +131,10 @@
         <img src="assets/cec-logo.png" alt="CEC" style="height: 32px; width: auto; display: block;">
         <span style="font-family: var(--font-display); font-weight: 700; font-size: 20px;">CEC <span style="color: var(--dim); font-weight: 500;">Support</span></span>
       </a>
-      <a class="btn btn-primary btn-sm dl" href="https://github.com/mrjeeves/CECSupport/releases/latest" data-asset-end="-setup.exe">Download</a>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="#kvms" class="cap" style="color: var(--dim);">KVMs</a>
+        <a class="btn btn-primary btn-sm dl" href="https://github.com/mrjeeves/CECSupport/releases/latest" data-asset-end="-setup.exe">Download</a>
+      </div>
     </div>
   </nav>
 
@@ -186,7 +238,90 @@
     </div>
   </section>
 
-  <!-- DOWNLOAD CTA -->
+  <!-- KVMS -->
+  <section class="section kvm-sec" id="kvms">
+    <div class="glow" style="width: 520px; height: 380px; right: -8%; top: -4%; background: var(--violet); opacity: 0.10;"></div>
+    <div class="wrap" style="position: relative; z-index: 1;">
+
+      <!-- lead-in hero: copy + the Pro's screen and USR-button panel -->
+      <div class="kvm-hero">
+        <div>
+          <span class="eyebrow no-rule">CEC KVMs</span>
+          <h2 class="display-l">Real help,<br>one button away.</h2>
+          <p class="lede">Plug a CEC KVM into any machine — even a headless one — and its help button reaches this same queue. A CEC technician connects and fixes it, down to the BIOS, even when it won't boot.</p>
+          <div class="kvm-hero-tags">
+            <span class="chip"><span class="dot"></span>Help button on board</span>
+            <span class="chip"><span class="dot"></span>Lifetime support · or monthly</span>
+          </div>
+        </div>
+        <div class="kvm-hero-shot">
+          <div class="glow" style="width: 360px; height: 300px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--violet); opacity: 0.14;"></div>
+          <img src="assets/kvm-hero.png" alt="CEC Pro KVM — the front screen and the back panel, with its USR help button" loading="lazy">
+        </div>
+      </div>
+
+      <!-- the lineup: three models, two prices -->
+      <div class="kvm-grid">
+        <!-- Cube -->
+        <a class="fleet" style="--pa: oklch(0.75 0.15 195);" href="https://allmystuff.works/hardware/">
+          <div class="fleet-shot"><img src="assets/kvm-cube.png" alt="CEC Cube KVM" loading="lazy"></div>
+          <div class="fleet-body">
+            <div class="fleet-no">Standard</div>
+            <div class="fleet-name">Cube</div>
+            <div class="fleet-price"><b>$149.99</b><small>· once</small></div>
+            <p class="fleet-role">Palm-sized and fanless. The budget model — it does the whole job.</p>
+            <div class="fleet-chips"><span>1080p</span><span>Wi-Fi 6</span><span>BOOT button</span></div>
+            <span class="fleet-link">Full spec →</span>
+          </div>
+        </a>
+        <!-- PCIe -->
+        <a class="fleet" style="--pa: var(--violet);" href="https://allmystuff.works/hardware/">
+          <div class="fleet-shot"><img src="assets/kvm-pcie.png" alt="CEC PCIe KVM card" loading="lazy"></div>
+          <div class="fleet-body">
+            <div class="fleet-no">Standard</div>
+            <div class="fleet-name">PCIe</div>
+            <div class="fleet-price"><b>$149.99</b><small>· once</small></div>
+            <p class="fleet-role">The same KVM on a card that lives inside the case.</p>
+            <div class="fleet-chips"><span>1080p</span><span>Fits a slot</span><span>BOOT button</span></div>
+            <span class="fleet-link">Full spec →</span>
+          </div>
+        </a>
+        <!-- Pro -->
+        <a class="fleet featured" style="--pa: var(--accent);" href="https://allmystuff.works/hardware/">
+          <span class="fleet-flag">Most popular</span>
+          <div class="fleet-shot"><img src="assets/kvm-pro.png" alt="CEC Pro KVM with onboard screen" loading="lazy"></div>
+          <div class="fleet-body">
+            <div class="fleet-no">Pro · 4K</div>
+            <div class="fleet-name">Pro</div>
+            <div class="fleet-price"><b>$299.99</b><small>· once</small></div>
+            <p class="fleet-role">4K capture with its own live screen. The flagship.</p>
+            <div class="fleet-chips"><span>4K</span><span>Wi-Fi 6 · GbE</span><span>USR button</span></div>
+            <span class="fleet-link">Full spec →</span>
+          </div>
+        </a>
+        <!-- PCIe-Pro -->
+        <a class="fleet" style="--pa: var(--accent);" href="https://allmystuff.works/hardware/">
+          <div class="fleet-shot"><img src="assets/kvm-pcie-pro.png" alt="CEC PCIe-Pro KVM card" loading="lazy"></div>
+          <div class="fleet-body">
+            <div class="fleet-no">Pro · 4K</div>
+            <div class="fleet-name">PCIe-Pro</div>
+            <div class="fleet-price"><b>$299.99</b><small>· once</small></div>
+            <p class="fleet-role">The Pro board, built to live inside the case.</p>
+            <div class="fleet-chips"><span>4K</span><span>Fits a slot</span><span>USR button</span></div>
+            <span class="fleet-link">Full spec →</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="kvm-foot">
+        <p class="cap">Claim &amp; assign in the app · iPhone &amp; Android in review</p>
+        <a class="btn btn-ghost btn-sm" href="https://allmystuff.works/hardware/">See them all on allmystuff.works →</a>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- DOWNLOAD CTA -->
   <section class="section" style="padding-top: 0;">
     <div class="wrap">
       <div style="position: relative; overflow: hidden; text-align: center; background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--accent-line); border-radius: 16px; padding: clamp(36px, 5vw, 60px);">
