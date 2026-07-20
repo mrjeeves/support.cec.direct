@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CEC Support — we fix it, you stay in control</title>
-<meta name="description" content="Free remote help for Windows: press Ask for help and a real technician connects. Plus CEC KVMs — a hardware help button that brings CEC support to any machine, even headless ones, on lifetime support.">
+<title>CEC Support · we fix it, you stay in control</title>
+<meta name="description" content="Free remote help for Windows: press Ask for help and a real technician connects. Plus CEC KVMs: a hardware help button that brings CEC support to any machine, even headless ones, on lifetime support.">
 <meta name="theme-color" content="#070711">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" sizes="48x48 32x32 16x16" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="CEC Support — remote help for Windows">
-<meta property="og:description" content="Press Ask for help and a real technician connects — you approve them by name. Plus CEC KVMs: a hardware help button that brings CEC support to any machine.">
+<meta property="og:title" content="CEC Support · remote help for Windows">
+<meta property="og:description" content="Press Ask for help and a real technician connects; you approve them by name. Plus CEC KVMs: a hardware help button that brings CEC support to any machine.">
 <meta property="og:url" content="https://support.cec.direct/">
 <meta property="og:image" content="https://support.cec.direct/og.png">
 <link rel="stylesheet" href="ds/cec/styles.css">
@@ -37,23 +37,23 @@
      motion) only the approval card shows, which is the state that matters. */
   .mock-stage { display: grid; }
   .mock-scene { grid-area: 1 / 1; opacity: 0; pointer-events: none; transition: opacity 550ms ease; display: flex; flex-direction: column; justify-content: center; }
-  /* Incoming starts only after outgoing has fully cleared — a lazy dip
+  /* Incoming starts only after outgoing has fully cleared: a lazy dip
      through dark, never text over text. */
   .mock-scene.on { opacity: 1; transition-delay: 650ms; transition-duration: 900ms; }
   /* The demoted fallback, mirroring the app: a slim ghost pill and a whisper
-     under a divider — clearly subordinate to the Ask button. */
+     under a divider, clearly subordinate to the Ask button. */
   .mock-minor { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 6px; }
   .mini-btn { font-family: var(--font-body); font-weight: 600; font-size: 12px; color: var(--text); border: 1px solid var(--border-bright); border-radius: 5px; padding: 6px 14px; }
   .mini-hint { font-size: 11px; color: var(--faint); }
 
-  /* CEC's contact points on the waiting beat — call, or catch the live. */
+  /* CEC's contact points on the waiting beat: call, or catch the live. */
   .mock-contact { text-align: left; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 10px 14px; margin: 0 0 14px; display: flex; flex-direction: column; gap: 7px; }
   .mc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .mc-k { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); white-space: nowrap; }
   .mc-v { font-size: 13px; font-weight: 600; color: var(--text); }
   .mc-live { font-size: 11.5px; color: var(--accent); text-decoration: underline; overflow-wrap: anywhere; text-align: right; }
 
-  /* The identity bar under every scene — the app keeps this pair on screen
+  /* The identity bar under every scene: the app keeps this pair on screen
      the whole time, so the mock does too. */
   .mock-idbar { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: baseline; gap: 12px; flex-wrap: wrap; }
   .mock-id-name { font-size: 11.5px; font-weight: 600; color: var(--dim); }
@@ -72,14 +72,14 @@
   @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr !important; } .mock { margin: 0 auto; } }
 
   /* ============================================================
-     KVMs — the hardware. A lead-in hero (text + device, echoing
+     KVMs, the hardware. A lead-in hero (text + device, echoing
      the app hero up top), then the lineup in CEC's signature
      FleetCard, then a tight support + link close. Kept direct.
      ============================================================ */
   .kvm-sec { border-top: 1px solid var(--border); overflow: hidden; }
 
   /* Lead-in: copy on the left, the Pro's screen + USR-button panel on
-     the right — the same shape as the page's opening hero. */
+     the right, the same shape as the page's opening hero. */
   .kvm-hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(30px, 5.5vw, 68px); align-items: center; }
   .kvm-hero h2 { margin: 16px 0; }
   .kvm-hero .lede { max-width: 46ch; margin-bottom: 24px; }
@@ -147,14 +147,14 @@
         <div>
           <span class="eyebrow no-rule">Remote help · Windows</span>
           <h1 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(44px, 6.2vw, 82px); line-height: 1.0; letter-spacing: -0.01em; margin: 18px 0 16px;">Real help,<br>one click&nbsp;away.</h1>
-          <p class="lede" style="max-width: 42ch; margin-bottom: 30px;">Download the app and press <strong>Ask for help</strong> — a real technician sees your request and connects. No numbers to read out, no jargon, no trip to the shop.</p>
+          <p class="lede" style="max-width: 42ch; margin-bottom: 30px;">Download the app and press <strong>Ask for help</strong> and a real technician sees your request and connects. No numbers to read out, no jargon, no trip to the shop.</p>
           <a class="btn btn-primary rep-cue big-btn dl" href="https://github.com/mrjeeves/CECSupport/releases/latest" data-asset-end="-setup.exe">Download for Windows</a>
           <p class="cap" style="margin-top: 16px;">Free · Windows 10 &amp; 11 · no account</p>
         </div>
 
         <!-- the product moment, played out: press Ask for help, wait a beat in
              line, approve your technician. Slow crossfades on a loop. -->
-        <div class="mock" role="img" aria-label="The app, animated: you press Ask for help, wait in line — with CEC's phone number 713.309.6361 and TikTok shown while you wait — then Alex asks to connect; nothing is shared until you approve them by name, and your computer's name and Support Number stay at the bottom of the window the whole time.">
+        <div class="mock" role="img" aria-label="The app, animated: you press Ask for help, wait in line (with CEC's phone number 713.309.6361 and TikTok shown while you wait), then Alex asks to connect; nothing is shared until you approve them by name, and your computer's name and Support Number stay at the bottom of the window the whole time.">
           <div class="mock-badge">
             <img src="assets/cec-logo.png" alt="" aria-hidden="true" style="height: 20px; width: auto; display: block;">
             CEC Support
@@ -163,17 +163,17 @@
             <div class="mock-scene" data-scene="ask" style="text-align: center;">
               <div class="mock-title">How can we help?</div>
               <div class="mock-actions" style="margin-top: 12px;">
-                <div class="mock-btn primary" id="mock-ask-btn">Ask for help <span class="hint">Raise your hand — a technician sees your request and connects</span></div>
+                <div class="mock-btn primary" id="mock-ask-btn">Ask for help <span class="hint">Raise your hand; a technician sees your request and connects</span></div>
               </div>
               <div class="mock-minor">
                 <span class="mini-btn">Show Support Number</span>
-                <span class="mini-hint">If we ask for your number — or you'd like to confirm it</span>
+                <span class="mini-hint">If we ask for your number, or you'd like to confirm it</span>
               </div>
             </div>
             <div class="mock-scene" data-scene="wait" style="text-align: center;">
               <span class="pulse-dot"></span>
               <div class="mock-title" style="margin-top: 0;">Help is on the way</div>
-              <p class="mock-sub" style="margin-bottom: 14px;">You're in line — a CEC technician will connect shortly.</p>
+              <p class="mock-sub" style="margin-bottom: 14px;">You're in line; a CEC technician will connect shortly.</p>
               <div class="mock-contact">
                 <div class="mc-row"><span class="mc-k">Call us</span><span class="mc-v">713.309.6361</span></div>
                 <div class="mc-row"><span class="mc-k">Catch us live</span><a class="mc-live" href="https://www.tiktok.com/@criticalerrorcomputing">tiktok.com/@criticalerrorcomputing</a></div>
@@ -183,12 +183,12 @@
             <div class="mock-scene on" data-scene="approve">
               <div class="mock-title">Alex is trying to connect to your computer.</div>
               <p class="mock-sub">They want to see and control your screen so they can help you.</p>
-              <p class="mock-verify">Only continue if you're expecting <strong>Alex</strong> — that's the name your technician will have told you to look for.</p>
+              <p class="mock-verify">Only continue if you're expecting <strong>Alex</strong>, the name your technician will have told you to look for.</p>
               <div class="mock-actions">
                 <div class="mock-btn primary">Approve once <span class="hint">Just for right now</span></div>
                 <div class="mock-btn ghost">Auto-approve for 3 hours <span class="hint">Handy for a repair that may need a restart</span></div>
               </div>
-              <div class="mock-deny">No thanks — don't connect</div>
+              <div class="mock-deny">No thanks, don't connect</div>
             </div>
           </div>
           <!-- The identity bar rides every scene, like the app's: the pair we
@@ -209,12 +209,12 @@
         <div>
           <div class="step-num">1</div>
           <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 600; margin: 14px 0 6px;">Press “Ask for help”</h3>
-          <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;">Raise your hand — every CEC technician sees your request, and one of them answers.</p>
+          <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;">Raise your hand; every CEC technician sees your request, and one of them answers.</p>
         </div>
         <div>
           <div class="step-num">2</div>
           <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 600; margin: 14px 0 6px;">Approve your technician</h3>
-          <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;">Nothing is shared until you approve them by name — the name we'll have told you to expect.</p>
+          <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;">Nothing is shared until you approve them by name, the name we'll have told you to expect.</p>
         </div>
         <div>
           <div class="step-num">3</div>
@@ -222,7 +222,7 @@
           <p style="margin: 0; font-size: 15px; color: var(--dim); line-height: 1.6;">Watch everything as it happens. One tap ends it, whenever you like.</p>
         </div>
       </div>
-      <p class="cap" style="margin: 36px 0 0; text-align: center;">If we ask for your Support Number — or you'd like to confirm it — it's one tap behind <span style="color: var(--dim);">Show Support Number</span>.</p>
+      <p class="cap" style="margin: 36px 0 0; text-align: center;">If we ask for your Support Number, or you'd like to confirm it, it's one tap behind <span style="color: var(--dim);">Show Support Number</span>.</p>
     </div>
   </section>
 
@@ -248,7 +248,7 @@
         <div>
           <span class="eyebrow no-rule">CEC KVMs</span>
           <h2 class="display-l">Real help,<br>one button away.</h2>
-          <p class="lede">Plug a CEC KVM into any machine — even a headless one — and its help button reaches this same queue. A CEC technician connects and fixes it, down to the BIOS, even when it won't boot.</p>
+          <p class="lede">Plug a CEC KVM into any machine, even a headless one, and its help button reaches this same queue. A CEC technician connects and fixes it, down to the BIOS, even when it won't boot.</p>
           <div class="kvm-hero-tags">
             <span class="chip"><span class="dot"></span>Help button on board</span>
             <span class="chip"><span class="dot"></span>Lifetime support · or monthly</span>
@@ -256,7 +256,7 @@
         </div>
         <div class="kvm-hero-shot">
           <div class="glow" style="width: 360px; height: 300px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--violet); opacity: 0.14;"></div>
-          <img src="assets/kvm-hero.png" alt="CEC Pro KVM — the front screen and the back panel, with its USR help button" loading="lazy">
+          <img src="assets/kvm-hero.png" alt="CEC Pro WIFI KVM · the front screen and the back panel, with its USR help button" loading="lazy">
         </div>
       </div>
 
@@ -269,30 +269,30 @@
             <div class="fleet-no">Standard</div>
             <div class="fleet-name">Cube</div>
             <div class="fleet-price"><b>$149.99</b><small>· once</small></div>
-            <p class="fleet-role">Palm-sized and fanless. The budget model — it does the whole job.</p>
-            <div class="fleet-chips"><span>1080p</span><span>Wi-Fi 6</span><span>BOOT button</span></div>
+            <p class="fleet-role">Palm-sized and fanless. The budget model; it does the whole job.</p>
+            <div class="fleet-chips"><span>1080p</span><span>Wired only</span><span>BOOT button</span></div>
             <span class="fleet-link">Buy →</span>
           </div>
         </a>
         <!-- PCIe -->
         <a class="fleet" style="--pa: var(--violet);" href="https://www.criticalerrorcomputing.com/products/cec-access-internal">
-          <div class="fleet-shot"><img src="assets/kvm-pcie.png" alt="CEC PCIe KVM card" loading="lazy"></div>
+          <div class="fleet-shot"><img src="assets/kvm-pcie.png" alt="CEC PCIe WIFI KVM card" loading="lazy"></div>
           <div class="fleet-body">
             <div class="fleet-no">Standard</div>
-            <div class="fleet-name">PCIe</div>
+            <div class="fleet-name">PCIe WIFI</div>
             <div class="fleet-price"><b>$149.99</b><small>· once</small></div>
             <p class="fleet-role">The same KVM on a card that lives inside the case.</p>
-            <div class="fleet-chips"><span>1080p</span><span>Fits a slot</span><span>BOOT button</span></div>
+            <div class="fleet-chips"><span>1080p</span><span>Wi-Fi</span><span>BOOT button</span></div>
             <span class="fleet-link">Buy →</span>
           </div>
         </a>
         <!-- Pro -->
         <a class="fleet featured" style="--pa: var(--accent);" href="https://www.criticalerrorcomputing.com/products/cec-access-pro">
           <span class="fleet-flag">Most popular</span>
-          <div class="fleet-shot"><img src="assets/kvm-pro.png" alt="CEC Pro KVM with onboard screen" loading="lazy"></div>
+          <div class="fleet-shot"><img src="assets/kvm-pro.png" alt="CEC Pro WIFI KVM with onboard screen" loading="lazy"></div>
           <div class="fleet-body">
             <div class="fleet-no">Pro · 4K</div>
-            <div class="fleet-name">Pro</div>
+            <div class="fleet-name">Pro WIFI</div>
             <div class="fleet-price"><b>$299.99</b><small>· once</small></div>
             <p class="fleet-role">4K capture with its own live screen. The flagship.</p>
             <div class="fleet-chips"><span>4K</span><span>Wi-Fi 6 · GbE</span><span>USR button</span></div>
@@ -301,13 +301,13 @@
         </a>
         <!-- PCIe-Pro -->
         <a class="fleet" style="--pa: var(--accent);" href="https://www.criticalerrorcomputing.com/products/cec-access-internal">
-          <div class="fleet-shot"><img src="assets/kvm-pcie-pro.png" alt="CEC PCIe-Pro KVM card" loading="lazy"></div>
+          <div class="fleet-shot"><img src="assets/kvm-pcie-pro.png" alt="CEC PCIe-Pro WIFI KVM card" loading="lazy"></div>
           <div class="fleet-body">
             <div class="fleet-no">Pro · 4K</div>
-            <div class="fleet-name">PCIe-Pro</div>
+            <div class="fleet-name">PCIe-Pro WIFI</div>
             <div class="fleet-price"><b>$299.99</b><small>· once</small></div>
             <p class="fleet-role">The Pro board, built to live inside the case.</p>
-            <div class="fleet-chips"><span>4K</span><span>Fits a slot</span><span>USR button</span></div>
+            <div class="fleet-chips"><span>4K</span><span>Wi-Fi 6</span><span>USR button</span></div>
             <span class="fleet-link">Buy →</span>
           </div>
         </a>
@@ -360,7 +360,7 @@
       scenes.forEach(function (s) { s.classList.toggle("on", s.dataset.scene === name); });
     }
     // Lazy, and lazier where it matters: the front door gets a long look,
-    // and the waiting beat holds longest of the first two — it now carries
+    // and the waiting beat holds longest of the first two; it now carries
     // the phone number and the live link, which deserve reading time.
     function loop() {
       show("ask");
@@ -374,7 +374,7 @@
 
   // One job: point the Download buttons straight at the latest Windows
   // installer when the release API is reachable. If it isn't, they already
-  // point at the releases page. No OS picker — this app is for Windows.
+  // point at the releases page. No OS picker; this app is for Windows.
   fetch("https://api.github.com/repos/mrjeeves/CECSupport/releases/latest")
     .then(function (r) { if (!r.ok) throw 0; return r.json(); })
     .then(function (rel) {
