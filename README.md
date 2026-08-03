@@ -16,11 +16,11 @@ It's deliberately minimal, in two beats:
   away"*: a hero showing the Pro's live screen and its USR-button back panel
   (the hardware "help me" that raises the machine's hand in the same CEC
   Support queue, on lifetime or monthly support), then the lineup in CEC's
-  signature product card: **GO** is **coming soon** with pricing **TBD**;
-  **PCIe WIFI** is **$149.99**; **Pro WIFI** and **PCIe-Pro WIFI** are
+  signature product card: **CEC KVM Go** is **coming soon** with pricing **TBD**;
+  **CEC KVM Pcie** is **$149.99**; **CEC KVM Pro** and **CEC KVM Pcie-Pro** are
   **$299.99**. Available models link to their product pages on the store
-  ([criticalerrorcomputing.com/collections/cec-access](https://www.criticalerrorcomputing.com/collections/cec-access);
-  the PCIe cards share the `cec-access-internal` product), and the section
+  ([criticalerrorcomputing.com/collections/cec-kvm](https://www.criticalerrorcomputing.com/collections/cec-kvm);
+  the PCIe cards share the `cec-kvm-pcie` product), and the section
   closes with one "Shop them all" link to that collection.
 
 ## Deploy
