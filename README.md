@@ -16,11 +16,11 @@ It's deliberately minimal, in two beats:
   away"*: a hero showing the Pro's live screen and its USR-button back panel
   (the hardware "help me" that raises the machine's hand in the same CEC
   Support queue, on lifetime or monthly support), then the lineup in CEC's
-  signature product card: **GO** is **coming soon** with pricing **TBD**;
-  **PCIe WIFI** is **$149.99**; **Pro WIFI** and **PCIe-Pro WIFI** are
+  signature product card: **CEC KVM Go** is **coming soon** with pricing **TBD**;
+  **CEC KVM Internal** is **$149.99**; **CEC KVM Pro** and **CEC KVM Internal-Pro** are
   **$299.99**. Available models link to their product pages on the store
-  ([criticalerrorcomputing.com/collections/cec-access](https://www.criticalerrorcomputing.com/collections/cec-access);
-  the PCIe cards share the `cec-access-internal` product), and the section
+  ([criticalerrorcomputing.com/collections/cec-kvm](https://www.criticalerrorcomputing.com/collections/cec-kvm);
+  the two Internal cards share the `cec-kvm-internal` product), and the section
   closes with one "Shop them all" link to that collection.
 
 ## Deploy
@@ -34,7 +34,7 @@ configured in the repo's Pages settings.
 - `ds/cec/`: the shared CEC design system (tokens + self-hosted fonts); copied
   in so the site matches allmystuff.works. Don't edit the tokens here.
 - `assets/kvm-*.png`: the KVM product photos (the hero front/back shot plus
-  the four models), copied from allmystuff.works; `kvm-pcie-pro.png` has had
+  the four models), copied from allmystuff.works; `kvm-internal-pro.png` has had
   its white background stripped to transparent so it sits on the dark cards.
 - `favicon.*`, `apple-touch-icon.png`, `assets/cec-logo.png`: the CEC brand
   marks (the cyan-bracket "critical error" logo), used in the nav, the hero
