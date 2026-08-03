@@ -16,9 +16,9 @@ It's deliberately minimal, in two beats:
   away"*: a hero showing the Pro's live screen and its USR-button back panel
   (the hardware "help me" that raises the machine's hand in the same CEC
   Support queue, on lifetime or monthly support), then the lineup in CEC's
-  signature product card: **Cube** and **PCIe WIFI** at **$149.99**, **Pro WIFI** and
-  **PCIe-Pro WIFI** at **$299.99**. Every card is a **Buy** link to its product
-  page on the store
+  signature product card: **GO** is **coming soon** with pricing **TBD**;
+  **PCIe WIFI** is **$149.99**; **Pro WIFI** and **PCIe-Pro WIFI** are
+  **$299.99**. Available models link to their product pages on the store
   ([criticalerrorcomputing.com/collections/cec-access](https://www.criticalerrorcomputing.com/collections/cec-access);
   the PCIe cards share the `cec-access-internal` product), and the section
   closes with one "Shop them all" link to that collection.
