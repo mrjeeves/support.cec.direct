@@ -60,6 +60,7 @@
       <div class="support-tour" data-tour>
         <div class="tour-heading"><span class="micro">Getting help is this simple</span><span class="preview-label">Illustrated preview</span></div>
         <div class="app-window support-window">
+          <span class="preview-watermark" aria-hidden="true">PREVIEW</span>
           <div class="window-bar"><span class="window-brand"><img src="assets/cec-logo.png" alt="">CEC Support</span><span class="window-dots" aria-hidden="true">— &nbsp; □ &nbsp; ×</span></div>
           <div class="tour-panel" id="help-number" data-panel>
             <div class="computer-label"><svg class="icon" aria-hidden="true"><use href="#i-screen"/></svg> My computer</div>
@@ -111,31 +112,34 @@
             <button type="button" data-step aria-controls="tools-windows" aria-pressed="false">Windows tools</button>
             <button type="button" data-step aria-controls="tools-advanced" aria-pressed="false">Advanced</button>
           </div>
-          <div class="tools-panel" id="tools-repairs" data-panel>
-            <h3 class="fallback-title">Repairs</h3>
-            <div class="tool-grid">
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><strong>System File Checker</strong><span>Repair system files</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-tools"/></svg><strong>Repair Windows image</strong><span>DISM</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-drive"/></svg><strong>Scan system drive</strong><span>Online disk check</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg><strong>Flush DNS cache</strong><span>Clear stale addresses</span></div>
+          <div class="toolbox-preview">
+            <span class="preview-watermark" aria-hidden="true">PREVIEW</span>
+            <div class="tools-panel" id="tools-repairs" data-panel>
+              <h3 class="fallback-title">Repairs</h3>
+              <div class="tool-grid">
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><strong>System File Checker</strong><span>Repair system files</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-tools"/></svg><strong>Repair Windows image</strong><span>DISM</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-drive"/></svg><strong>Scan system drive</strong><span>Online disk check</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg><strong>Flush DNS cache</strong><span>Clear stale addresses</span></div>
+              </div>
             </div>
-          </div>
-          <div class="tools-panel" id="tools-windows" data-panel>
-            <h3 class="fallback-title">Windows tools</h3>
-            <div class="tool-grid">
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg><strong>Task Manager</strong><span>See what's running</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><strong>Device Manager</strong><span>Hardware &amp; drivers</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg><strong>Event Viewer</strong><span>Windows event logs</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-screen"/></svg><strong>System Information</strong><span>Your PC at a glance</span></div>
+            <div class="tools-panel" id="tools-windows" data-panel>
+              <h3 class="fallback-title">Windows tools</h3>
+              <div class="tool-grid">
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg><strong>Task Manager</strong><span>See what's running</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><strong>Device Manager</strong><span>Hardware &amp; drivers</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg><strong>Event Viewer</strong><span>Windows event logs</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-screen"/></svg><strong>System Information</strong><span>Your PC at a glance</span></div>
+              </div>
             </div>
-          </div>
-          <div class="tools-panel" id="tools-advanced" data-panel>
-            <h3 class="fallback-title">Advanced</h3>
-            <div class="tool-grid">
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg><strong>Crucible Tests</strong><span>Hardware stress tests</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-drive"/></svg><strong>Disk Management</strong><span>Drives &amp; partitions</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg><strong>Registry Editor</strong><span>Advanced configuration</span></div>
-              <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><strong>Reliability Monitor</strong><span>Stability history</span></div>
+            <div class="tools-panel" id="tools-advanced" data-panel>
+              <h3 class="fallback-title">Advanced</h3>
+              <div class="tool-grid">
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg><strong>Crucible Tests</strong><span>Hardware stress tests</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-drive"/></svg><strong>Disk Management</strong><span>Drives &amp; partitions</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg><strong>Registry Editor</strong><span>Advanced configuration</span></div>
+                <div class="tool"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><strong>Reliability Monitor</strong><span>Stability history</span></div>
+              </div>
             </div>
           </div>
           <div class="toolbox-footer"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Repairs open in visible administrator windows.</div>
