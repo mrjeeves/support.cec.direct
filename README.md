@@ -1,41 +1,53 @@
 # support.cec.direct
 
-The website for **CEC Support**, Critical Error Computing's remote-help app for
-Windows. Static, no build step: one visual page (`index.html`) on the shared
-CEC design system (`ds/cec/`).
+The CEC Support website: a static, visual tour of the Windows app on the shared
+CEC design system. Keep customer-facing copy brief; show the controls.
 
-It's deliberately minimal, in two beats:
+- **Get help:** share a nine-digit Support Number, confirm the technician's name,
+  approve access, and use Forget to disconnect and revoke access.
+- **Toolbox:** selectable previews of repairs, Windows utilities, and advanced
+  tools, plus visible repair progress and downloadable logs.
+- **KVMs:** product photos alongside claiming, console, Wi-Fi, firmware updates,
+  and support approvals. Product cards link to the store for current pricing.
 
-- **The app.** A headline, a picture of the "Allow?" prompt, three one-line
-  steps, and **one** button: **Download for Windows**. No install commands,
-  no OS picker, no options. The button points at the latest `-setup.exe` from
-  [github.com/mrjeeves/CECSupport](https://github.com/mrjeeves/CECSupport)
-  (a tiny script upgrades it to the exact release asset when the GitHub API
-  is reachable; otherwise it opens the releases page).
-- **The KVMs** (`#kvms`). The same story in hardware, *"Real help, one button
-  away"*: a hero showing the Pro's live screen and its USR-button back panel
-  (the hardware "help me" that raises the machine's hand in the same CEC
-  Support queue, on lifetime or monthly support), then the lineup in CEC's
-  signature product card: **CEC KVM Go** is **coming soon** with pricing **TBD**;
-  **CEC KVM Internal** is **$149.99**; **CEC KVM Pro** and **CEC KVM Internal-Pro** are
-  **$299.99**. Available models link to their product pages on the store
-  ([criticalerrorcomputing.com/collections/cec-kvm](https://www.criticalerrorcomputing.com/collections/cec-kvm);
-  the two Internal cards share the `cec-kvm-internal` product), and the section
-  closes with one "Shop them all" link to that collection.
+The support flow is number-based access to a private mesh. It does not advertise
+a public directory, a queue, or raising a hand. App illustrations are labelled
+previews and use example identities and numbers. Their controls only switch
+illustrations; they do not connect to a computer or execute repairs.
+The illustrated layout is simplified from the app, not a screenshot.
 
-## Deploy
+## Content sources
 
-GitHub Pages → deploy from branch `main`, folder `/root`. The custom domain is
-configured in the repo's Pages settings.
+Feature labels and behavior were checked against `mrjeeves/CECSupport` at
+`6065332`, especially `gui/src/ui/ApproveModal.svelte`, `AccessList.svelte`,
+`ToolboxWindow.svelte`, `KvmClaimCard.svelte`, and `KvmWifiModal.svelte`.
+The support-number-first messaging follows the private-mesh product direction.
+Keep firmware-dependent KVM controls qualified, and do not imply every model
+has Wi-Fi.
+
+## Local development and validation
+
+Run `just dev` to serve the site, or `python -m http.server 8000`.
+Run `just check` or `just build` (both use `python scripts/check_site.py`).
+Preview desktop and narrow mobile widths; check the support steps, Toolbox
+categories, keyboard focus, and download links.
+
+The page has no build step or third-party UI runtime. Without JavaScript, all
+preview panels remain visible and downloads open GitHub's latest-release page.
+With JavaScript, download links resolve to the latest Windows `-setup.exe` when
+the GitHub release API is reachable. Preview transitions never autoplay.
+Reduced-motion preferences disable smooth scrolling and transitions.
 
 ## Files
 
-- `index.html`: the whole site.
-- `ds/cec/`: the shared CEC design system (tokens + self-hosted fonts); copied
-  in so the site matches allmystuff.works. Don't edit the tokens here.
-- `assets/kvm-*.png`: the KVM product photos (the hero front/back shot plus
-  the four models), copied from allmystuff.works; `kvm-internal-pro.png` has had
-  its white background stripped to transparent so it sits on the dark cards.
-- `favicon.*`, `apple-touch-icon.png`, `assets/cec-logo.png`: the CEC brand
-  marks (the cyan-bracket "critical error" logo), used in the nav, the hero
-  prompt card, and the tab/home-screen icons.
+- `index.html`: page content and accessible SVG icons.
+- `assets/site.css`: responsive page styles.
+- `assets/site.js`: preview selectors and installer link resolution.
+- `ds/cec/`: shared tokens and self-hosted fonts. Do not edit the tokens here.
+- `assets/kvm-*.png`: existing product photography.
+- `favicon.*`, `apple-touch-icon.png`, `assets/cec-logo.png`: brand assets.
+
+## Deploy
+
+GitHub Pages deploys from `main`, folder `/root`. The custom domain is configured
+in the repository's Pages settings.
