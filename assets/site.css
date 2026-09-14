@@ -34,8 +34,8 @@ button { font: inherit; }
 .micro { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; color: var(--dim); }
 .preview-label { font-size: 10px; color: var(--site-muted); white-space: nowrap; }
 .app-window { overflow: hidden; background: linear-gradient(140deg, #1b192a, #11101c 75%); border: 1px solid #464057; border-radius: 14px; box-shadow: 0 28px 70px -40px #000; }
-.support-window { position: relative; isolation: isolate; }
-.hero-watermark { position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%) rotate(-28deg); font-family: var(--font-display); font-size: clamp(60px, 7vw, 96px); font-weight: 700; line-height: 1; letter-spacing: .1em; color: rgb(255 255 255 / .32); white-space: nowrap; pointer-events: none; user-select: none; }
+.support-window, .toolbox-preview { position: relative; isolation: isolate; overflow: hidden; }
+.preview-watermark { position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%) rotate(-28deg); font-family: var(--font-display); font-size: clamp(60px, 7vw, 96px); font-weight: 700; line-height: 1; letter-spacing: .1em; color: rgb(255 255 255 / .32); white-space: nowrap; pointer-events: none; user-select: none; }
 .window-bar { min-height: 56px; padding: 16px 22px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #ffffff03; }
 .window-brand { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; }
 .window-brand img { width: 26px; height: 20px; object-fit: contain; }
