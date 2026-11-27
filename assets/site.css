@@ -28,6 +28,7 @@ button { font: inherit; }
 .download-main { padding: 16px 24px; font-size: 16px; min-height: 58px; }
 .download-main .icon { width: 20px; height: 20px; }
 .download-note { margin-top: 13px; color: var(--site-muted); font-size: 12px; }
+.download-note a, .download-link { color: var(--site-cyan); text-decoration: underline; text-underline-offset: 3px; }
 .support-tour { position: relative; min-width: 0; }
 .support-tour::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 70% 50%, #74378738, transparent 68%); pointer-events: none; }
 .tour-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; }
@@ -162,8 +163,25 @@ button { font: inherit; }
 .product-card h3 { font-size: 23px; margin-top: 6px; }
 .product-card > .icon { width: 18px; height: 18px; color: #f586c0; margin: 0 0 4px 5px; }
 .download-section { padding: 85px 0; text-align: center; }
-.download-section > img { object-fit: contain; width: 72px; height: 52px; }
-.download-section h2 { font-size: clamp(42px, 5vw, 62px); margin: 15px 0 26px; }
+.download-section h2 { font-size: clamp(42px, 5vw, 62px); margin-bottom: 26px; }
+.download-grid, .terminal-install { max-width: 900px; margin-inline: auto; text-align: left; }
+.download-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 16px; }
+.download-card, .terminal-install { padding: clamp(18px, 3vw, 28px); border: 1px solid var(--border); border-radius: 12px; background: #ffffff04; }
+.download-card h3 { font-family: var(--font-display); font-size: 30px; line-height: 1; }
+.download-card p, .terminal-install p { margin-block: 12px; color: var(--dim); font-size: 14px; line-height: 1.6; }
+.download-card .btn { margin-top: 8px; }
+.download-card .btn .icon { width: 17px; height: 17px; }
+.download-link { font-size: 14px; }
+.linux-downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(155px, 100%), 1fr)); gap: 8px; margin: 14px 0; padding: 0; list-style: none; }
+.linux-downloads a { display: flex; flex-direction: column; gap: 4px; padding: 10px 13px; border: 1px solid var(--border-bright); border-radius: 7px; }
+.linux-downloads a:hover { border-color: var(--site-cyan); }
+.linux-downloads span { color: var(--site-muted); font-size: 12px; }
+.terminal-install { margin-top: 16px; }
+.terminal-install summary { font-weight: 600; cursor: pointer; }
+.terminal-install summary .icon { width: 18px; height: 18px; margin-inline: 4px 8px; color: var(--site-cyan); vertical-align: -4px; }
+.terminal-install[open] summary { margin-bottom: 14px; }
+.terminal-install pre { margin-block: 12px; padding: 12px; border-radius: 6px; background: var(--bg); white-space: pre-wrap; }
+.terminal-install code { font-family: var(--font-mono); font-size: 13px; overflow-wrap: anywhere; }
 .site-footer { border-top: 1px solid var(--border); padding: 27px 0; color: var(--site-muted); font-size: 11px; }
 .site-footer .wrap, .site-footer .wrap > div { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
 @media (max-width: 1000px) {
@@ -230,6 +248,7 @@ button { font: inherit; }
   .product-card h3 { font-size: 23px; }
   .product-card > .icon { margin: 0; }
   .download-section { padding: 60px 0; }
+  .download-grid { grid-template-columns: 1fr; }
   .site-footer .wrap { flex-direction: column; gap: 14px; }
 }
 @media (max-width: 400px) {

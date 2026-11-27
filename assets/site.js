@@ -27,13 +27,30 @@ fetch("https://api.github.com/repos/mrjeeves/CECSupport/releases/latest")
     return response.json();
   })
   .then(function (release) {
-    var setup = (release.assets || []).find(function (asset) {
-      return typeof asset.name === "string" && asset.name.endsWith("-setup.exe");
+    var tag = release.tag_name;
+    if (!/^v[0-9]+\.[0-9]+\.[0-9]+$/.test(tag) || !Array.isArray(release.assets)) return;
+    var prefix = "https://github.com/mrjeeves/CECSupport/releases/download/" + tag + "/";
+    var assets = release.assets.filter(function (asset) {
+      return asset && typeof asset.name === "string" && asset.state === "uploaded" &&
+        asset.browser_download_url === prefix + encodeURIComponent(asset.name);
     });
-    if (!setup || typeof setup.browser_download_url !== "string") return;
-    var url = new URL(setup.browser_download_url);
-    if (url.origin !== "https://github.com" ||
-        !url.pathname.startsWith("/mrjeeves/CECSupport/releases/download/")) return;
-    document.querySelectorAll("a.dl").forEach(function (link) { link.href = url.href; });
+    var setup = assets.find(function (asset) { return asset.name.endsWith("-setup.exe"); });
+    if (setup) document.querySelector("[data-windows-download]").href = setup.browser_download_url;
+
+    var linuxCount = 0;
+    document.querySelectorAll("[data-linux-package]").forEach(function (link) {
+      var suffix = ("_" + tag.slice(1) + "_" + link.dataset.linuxPackage).toLowerCase();
+      var matches = assets.filter(function (asset) {
+        var name = asset.name.toLowerCase().replace(/^cec[ ._-]support_/, "cec-support_");
+        return name === "cec-support" + suffix;
+      });
+      if (matches.length !== 1 || !/^sha256:[a-f0-9]{64}$/.test(matches[0].digest)) return;
+      link.href = matches[0].browser_download_url;
+      link.parentElement.hidden = false;
+      linuxCount += 1;
+    });
+    document.querySelector("#linux-downloads").hidden = linuxCount === 0;
+    document.querySelector("#linux-download-status").textContent = linuxCount ?
+      "Linux downloads in " + tag + "." : "The latest release (" + tag + ") has no Linux packages yet.";
   })
   .catch(function () {});

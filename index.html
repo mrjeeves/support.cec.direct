@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CEC Support · Help, tools, and KVMs</title>
-  <meta name="description" content="Share your Support Number. Approve your technician. Repair Windows with Toolbox and manage your CEC KVMs, all in one app.">
+  <meta name="description" content="Get help with a Support Number, run Windows repairs or Linux diagnostics, and manage your CEC KVMs.">
   <meta name="theme-color" content="#070711">
   <link rel="canonical" href="https://support.cec.direct/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="CEC Support · Help, tools, and KVMs">
-  <meta property="og:description" content="Real help. Useful tools. Your KVMs. One Windows app.">
+  <meta property="og:description" content="Get remote help and manage your CEC KVMs from a Windows or Linux desktop.">
   <meta property="og:url" content="https://support.cec.direct/">
   <meta property="og:image" content="https://support.cec.direct/assets/kvm-hero.png">
   <meta property="og:image:alt" content="CEC KVM Pro, front and back">
@@ -43,7 +43,7 @@
     <nav class="wrap nav" aria-label="Main navigation">
       <a class="brand" href="./"><img src="assets/cec-logo.png" width="44" height="32" alt=""><span>CEC <b>Support</b></span></a>
       <div class="nav-links"><a href="#help">Get help</a><a href="#toolbox">Toolbox</a><a href="#kvms">KVMs</a></div>
-      <a class="btn btn-primary btn-sm dl" href="https://github.com/mrjeeves/CECSupport/releases/latest">Download <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+      <a class="btn btn-primary btn-sm" href="#download">Download <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
     </nav>
   </header>
 
@@ -52,9 +52,9 @@
       <div class="hero-copy">
         <span class="eyebrow">Meet CEC Support</span>
         <h1 id="hero-title">Your PC.<br>In good <span>hands.</span></h1>
-        <p class="hero-lede">Real help. Useful tools. Your KVMs.<br>One Windows app.</p>
-        <a class="btn btn-primary download-main dl" href="https://github.com/mrjeeves/CECSupport/releases/latest"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download for Windows</a>
-        <p class="download-note">Free app · Windows 10 &amp; 11</p>
+        <p class="hero-lede">Get remote help, run diagnostics, and manage your CEC KVMs from your desktop.</p>
+        <a class="btn btn-primary download-main" href="#download"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download CEC Support</a>
+        <p class="download-note">Free desktop app · <a href="#windows-download">Windows</a> &amp; <a href="#linux-download">Linux</a></p>
       </div>
 
       <div class="support-tour" data-tour>
@@ -102,7 +102,7 @@
     <section class="feature-section wrap" id="toolbox" aria-labelledby="toolbox-title">
       <div class="section-heading">
         <div><span class="eyebrow">The Toolbox</span><h2 id="toolbox-title">Less digging.<br>More fixing.</h2></div>
-        <p>Windows repairs. Hardware checks.<br>The tools you need, ready to go.</p>
+        <p>Run Windows repairs or check Linux disk usage, network settings, and service logs.</p>
       </div>
       <div class="toolbox-layout">
         <div class="app-window toolbox-window" data-tour>
@@ -156,7 +156,7 @@
       <div class="wrap">
         <div class="section-heading">
           <div><span class="eyebrow">CEC KVM management</span><h2 id="kvm-title">Small box.<br>Big backup plan.</h2></div>
-          <p>Manage it in the app.<br>Reach your PC, even before Windows starts.</p>
+          <p>Manage it in the app.<br>Reach your PC before the operating system starts.</p>
         </div>
         <div class="kvm-showcase">
           <div class="hardware-stage"><div class="hardware-ring" aria-hidden="true"></div><img src="assets/kvm-hero.png" alt="CEC KVM Pro with its screen and rear connections" loading="lazy"><span class="hardware-caption">CEC KVM Pro</span></div>
@@ -182,11 +182,36 @@
       </div>
     </section>
 
-    <section class="download-section wrap" aria-labelledby="download-title">
-      <img src="assets/cec-logo.png" alt="" width="72" height="52" loading="lazy">
-      <h2 id="download-title">Let's get you sorted.</h2>
-      <a class="btn btn-primary download-main dl" href="https://github.com/mrjeeves/CECSupport/releases/latest"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download for Windows</a>
-      <p class="download-note">Free app · Windows 10 &amp; 11</p>
+    <section class="download-section wrap" id="download" aria-labelledby="download-title">
+      <h2 id="download-title">Download CEC Support</h2>
+      <div class="download-grid">
+        <article class="download-card" id="windows-download">
+          <h3>Windows</h3>
+          <p>Windows 10 and 11 · x86-64</p>
+          <a class="btn btn-primary" data-windows-download href="https://github.com/mrjeeves/CECSupport/releases/latest"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Windows installer</a>
+        </article>
+        <article class="download-card" id="linux-download">
+          <h3>Linux</h3>
+          <p>64-bit x86 and ARM desktop builds. Use the <code>.deb</code> on compatible Debian and Ubuntu systems, or the AppImage on a compatible Linux desktop with FUSE.</p>
+          <p id="linux-download-status" role="status">See the latest GitHub release for Linux package availability.</p>
+          <ul class="linux-downloads" id="linux-downloads" aria-label="Linux packages" hidden>
+            <li hidden><a data-linux-package="amd64.deb"><strong>Debian package</strong><span>x86-64</span></a></li>
+            <li hidden><a data-linux-package="arm64.deb"><strong>Debian package</strong><span>ARM64</span></a></li>
+            <li hidden><a data-linux-package="amd64.AppImage"><strong>AppImage</strong><span>x86-64</span></a></li>
+            <li hidden><a data-linux-package="aarch64.AppImage"><strong>AppImage</strong><span>ARM64</span></a></li>
+          </ul>
+          <a class="download-link" href="https://github.com/mrjeeves/CECSupport/releases/latest">View release on GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <details class="terminal-install" id="terminal-install">
+        <summary><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg>Install from a Linux terminal</summary>
+        <p>Once a Linux package is available, the installer picks the latest release for your architecture and verifies its SHA-256 checksum. It needs Bash, curl, Python 3, and sha256sum.</p>
+        <p>On Debian or Ubuntu, run the installer as your desktop user. It asks for permission when APT installs the package.</p>
+        <pre><code>curl -fsSLo cec-support-install.sh https://support.cec.direct/install.sh &amp;&amp; \
+  bash cec-support-install.sh</code></pre>
+        <p>For an AppImage, <a class="download-link" href="install.sh" download="cec-support-install.sh">download the installer script</a>, then run <code>bash cec-support-install.sh --appimage</code> from that directory. Open <code>~/.local/bin/cec-support.AppImage</code> to start the app.</p>
+        <p>Run the same command again to update.</p>
+      </details>
     </section>
   </main>
   <footer class="site-footer"><div class="wrap"><span>A Critical Error Computing product</span><div><a href="tel:+17133096361">713.309.6361</a><a href="https://github.com/mrjeeves/CECSupport">Open source <span aria-hidden="true">↗</span></a></div></div></footer>
