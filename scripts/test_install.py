@@ -85,7 +85,7 @@ class InstallerTest(unittest.TestCase):
             release_asset("CEC.Support_0.2.63_x64-setup.exe"),
             release_asset("CEC.Support_0.2.63_arm64.deb", browser_download_url="https://example.org/file.deb"),
         ])
-        self.assertIn("no unambiguous arm64 deb download", result.stderr)
+        self.assertIn("No matching arm64 deb download is available", result.stderr)
         self.assertNotEqual(result.returncode, 0)
         self.assertFalse((self.root / "download.log").exists())
 

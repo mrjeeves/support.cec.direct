@@ -90,7 +90,7 @@ for asset in assets:
         matches.append((name, url, asset.get("digest")))
 
 if len(matches) != 1:
-    sys.exit(f"CEC Support: {tag} has no unambiguous {arch} {package_format} download. "
+    sys.exit(f"CEC Support: No matching {arch} {package_format} download is available in {tag}. "
              "See https://support.cec.direct/#download for release availability.")
 name, url, digest = matches[0]
 if not isinstance(digest, str) or not re.fullmatch(r"sha256:[a-f0-9]{64}", digest):
