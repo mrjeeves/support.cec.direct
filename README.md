@@ -1,6 +1,6 @@
 # support.cec.direct
 
-The CEC Support website: a static, visual tour of the Windows app on the shared
+The CEC Support website: a static, visual tour of the desktop app on the shared
 CEC design system. Keep customer-facing copy brief; show the controls.
 
 - **Get help:** share a nine-digit Support Number, confirm the technician's name,
@@ -34,15 +34,22 @@ categories, keyboard focus, and download links.
 
 The page has no build step or third-party UI runtime. Without JavaScript, all
 preview panels remain visible and downloads open GitHub's latest-release page.
-With JavaScript, download links resolve to the latest Windows `-setup.exe` when
-the GitHub release API is reachable. Preview transitions never autoplay.
+With JavaScript, download links show the latest Windows installer and published
+Linux packages. Linux links appear independently as each architecture and format
+is uploaded. Preview transitions never autoplay.
 Reduced-motion preferences disable smooth scrolling and transitions.
+
+`install.sh` uses the same public GitHub release. It verifies the asset's SHA-256
+digest before handing the `.deb` to APT or placing the AppImage in `~/.local/bin`.
+Run `bash -n install.sh` and `python3 scripts/test_install.py` on Linux to check
+the installer against stubbed downloads and package-manager calls.
 
 ## Files
 
 - `index.html`: page content and accessible SVG icons.
 - `assets/site.css`: responsive page styles.
 - `assets/site.js`: preview selectors and installer link resolution.
+- `install.sh`: Linux terminal installer served at `/install.sh`.
 - `ds/cec/`: shared tokens and self-hosted fonts. Do not edit the tokens here.
 - `assets/kvm-*.png`: existing product photography.
 - `favicon.*`, `apple-touch-icon.png`, `assets/cec-logo.png`: brand assets.

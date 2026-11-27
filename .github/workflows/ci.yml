@@ -19,3 +19,5 @@ jobs:
           python-version: "3.x"
       - uses: extractions/setup-just@v2
       - run: just build
+      - run: bash -n install.sh
+      - run: python3 scripts/test_install.py
